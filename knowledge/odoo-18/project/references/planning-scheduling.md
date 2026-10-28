@@ -1,6 +1,6 @@
 # Planning and scheduling (Odoo 18)
 
-Sources (confirmed): https://www.odoo.com/documentation/18.0/applications/services/planning.html ; task dates in https://www.odoo.com/documentation/18.0/applications/services/project/tasks/task_creation.html ; templates in https://www.odoo.com/documentation/18.0/applications/services/project/project_management/project_templates.html (verify the page exists in 18) ; dependencies in https://www.odoo.com/documentation/18.0/applications/services/project/tasks/task_dependencies.html
+Sources (confirmed): https://www.odoo.com/documentation/18.0/applications/services/planning.html ; task dates in https://www.odoo.com/documentation/18.0/applications/services/project/tasks/task_creation.html ; templates in https://www.odoo.com/documentation/18.0/applications/services/project/project_management.html (verify the page exists in 18) ; dependencies in https://www.odoo.com/documentation/18.0/applications/services/project/tasks/task_dependencies.html
 
 ## Task-level scheduling (Project)
 - Task: Allocated Time (expected duration, tracked by timesheets), Deadline; the date picker calendar icon sets start/end with optional times. Gantt view: drag, dependency arrows (dot to dot). Milestones show as diamonds.
