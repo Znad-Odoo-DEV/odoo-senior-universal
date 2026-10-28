@@ -6,7 +6,7 @@ Confirmed 18.0 docs:
 - Configuration: https://www.odoo.com/documentation/18.0/applications/websites/website/configuration.html
 - Reporting: https://www.odoo.com/documentation/18.0/applications/websites/website/reporting.html
 - eCommerce performance: https://www.odoo.com/documentation/18.0/applications/websites/ecommerce/performance.html
-- Google Merchant Center: https://www.odoo.com/documentation/18.0/applications/websites/ecommerce/google_merchant_center.html
+- Google Merchant Center: https://www.odoo.com/documentation/18.0/applications/websites/ecommerce.html
 - Dedicated SEO page (verify in 18.0 docs: https://www.odoo.com/documentation/18.0/applications/websites/website/pages/seo.html)
 
 ## On-page SEO
