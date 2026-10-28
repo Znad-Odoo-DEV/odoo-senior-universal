@@ -1,6 +1,6 @@
 # Project profitability (Odoo 17)
 
-Sources (19.0 layout, version swapped; verify paths in 17.0): https://www.odoo.com/documentation/17.0/applications/services/project/project_management/project_profitability.html ; https://www.odoo.com/documentation/17.0/applications/services/project/project_management/project_dashboard.html ; https://www.odoo.com/documentation/17.0/applications/sales/sales/invoicing/time_materials.html
+Sources (19.0 layout, version swapped; verify paths in 17.0): https://www.odoo.com/documentation/17.0/applications/services/project/project_management.html ; https://www.odoo.com/documentation/17.0/applications/services/project/project_management.html ; https://www.odoo.com/documentation/17.0/applications/sales/sales/invoicing/time_materials.html
 
 ## Where
 - On the project's dashboard / Project Updates view (reached from the project card menu or smart buttons; verify the exact entry point and the "choose records shown" control in 17.0). Compares costs (employee time, materials, purchases, expenses, after-sales) with revenues.
@@ -16,10 +16,10 @@ Sources (19.0 layout, version swapped; verify paths in 17.0): https://www.odoo.c
 - Timesheets (per product invoicing policy: Prepaid/Fixed Price, Based on Timesheets, Based on Milestones), Materials (SO product prices), Customer invoices, Subscriptions, Down payments, re-invoiced Expenses.
 
 ## Cost sources
-- Timesheets (employee HR cost settings), Purchase orders (shown after the vendor bill is posted), Materials. Remaining cost lines and explicit margin display: not read (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/services/project/project_management/project_profitability.html).
+- Timesheets (employee HR cost settings), Purchase orders (shown after the vendor bill is posted), Materials. Remaining cost lines and explicit margin display: not read (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/services/project/project_management.html).
 
 ## Dashboard indicators
-- Smart buttons: Tasks (done/total), Timesheets (allocated vs logged, validated and not), Planned, Documents, Burndown Chart, Timesheets and Planning, linked SO/SO items/POs (availability depends on installed apps and edition). Project updates = status snapshots (status options: verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/services/project/project_management/project_dashboard.html).
+- Smart buttons: Tasks (done/total), Timesheets (allocated vs logged, validated and not), Planned, Documents, Burndown Chart, Timesheets and Planning, linked SO/SO items/POs (availability depends on installed apps and edition). Project updates = status snapshots (status options: verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/services/project/project_management.html).
 
 ## Troubleshooting
 1. Number missing: check project + analytic account on the record.
