@@ -42,6 +42,6 @@ Official docs (Odoo 17.0; landing page is stable, verify sub-pages resolve):
 - https://www.odoo.com/documentation/17.0/applications/studio/views.html
 - https://www.odoo.com/documentation/17.0/applications/studio/models_modules_apps.html
 - https://www.odoo.com/documentation/17.0/applications/studio/automated_actions.html
-- https://www.odoo.com/documentation/17.0/applications/studio/automated_actions/webhooks.html
+- https://www.odoo.com/documentation/17.0/applications/studio/automated_actions.html
 - https://www.odoo.com/documentation/17.0/applications/studio/pdf_reports.html
 - https://www.odoo.com/documentation/17.0/applications/studio/approval_rules.html
