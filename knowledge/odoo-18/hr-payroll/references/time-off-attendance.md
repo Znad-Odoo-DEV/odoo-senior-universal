@@ -4,8 +4,8 @@
 Docs: https://www.odoo.com/documentation/18.0/applications/hr/time_off.html
 Sub-pages (confirmed, under .../hr/time_off/): time_off_types, allocations, accrual_plans, mandatory_days, public_holidays, request_time_off, my_time, management, reporting.
 - Time off types must exist before requests; some types require an allocation (balance granted by management).
-- Accrual plans build balance over time. Level options (frequency, caps, carry-over): (verify in 18.0 docs: https://www.odoo.com/documentation/18.0/applications/hr/time_off/accrual_plans.html)
-- Approvals: managers review from dashboards; a "Second Approval" status exists (striped on calendar; solid when fully approved). Validation modes per type: (verify in 18.0 docs: https://www.odoo.com/documentation/18.0/applications/hr/time_off/time_off_types.html)
+- Accrual plans build balance over time. Level options (frequency, caps, carry-over): (verify in 18.0 docs: https://www.odoo.com/documentation/18.0/applications/hr/time_off.html)
+- Approvals: managers review from dashboards; a "Second Approval" status exists (striped on calendar; solid when fully approved). Validation modes per type: (verify in 18.0 docs: https://www.odoo.com/documentation/18.0/applications/hr/time_off.html)
 - Public holidays and mandatory days must follow local/national rules; they affect work entries.
 - Payroll link: time off type -> work entry type; approved leave cancels overlapping work entries; refusal returns them to Draft.
 - Statutory entitlements and paid/unpaid treatment are country-specific; never assume.
