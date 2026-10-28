@@ -11,7 +11,7 @@ Grounded in the official docs; confirm specifics there:
 - Upgrade overview: https://www.odoo.com/documentation/20.0/administration/upgrade.html
 - ORM changelog: https://www.odoo.com/documentation/20.0/developer/reference/backend/orm/changelog.html
 - Release notes: https://www.odoo.com/odoo-20-release-notes
-- Upgrade a customized database: https://www.odoo.com/documentation/20.0/developer/howtos/upgrade_custom_db.html (verify in 20.0 docs)
+- Upgrade a customized database: https://www.odoo.com/documentation/20.0/developer/howtos/upgrade_custom_db.html
 
 ## Mindset
 - Rehearse on a **test** database until clean; run production in a quiet window; keep a restorable 19.0 backup until 20.0 has run a full cycle.
@@ -27,11 +27,11 @@ Grounded in the official docs; confirm specifics there:
 5. Fix, repeat test upgrades; only when green, schedule and run **production** (unavailable during the upgrade; post-copy changes are not carried over).
 
 ## Headline breaking changes 19 -> 20 (see `references/code-migration.md`)
-- **Security rewrite**: `ir.model.access` + `ir.rule` merge into **`ir.access`**; `ir.model.access.csv` -> **`ir.access.csv`** (`id,name,model_id,group_id/id,operation,domain`). Every module's security files must be rewritten.
-- **ORM**: `read_group` becomes public with signature `(domain, groupby, aggregates, having, offset, limit, order)` — old `fields=`/`lazy=` calls break; `_table_query` removed; `_check_access` deprecated; tracking values removed.
+- **Security rewrite**: `ir.model.access` + `ir.rule` merge into **`ir.access`**; `ir.model.access.csv` -> **`ir.access.csv`** (`id,name,model_id,group_id/id,operation,domain`; `operation` is a subsequence of "crud"). Every module's security files must be rewritten.
+- **ORM** (only `_table_query` removal is in the 20.0 changelog; the rest is unverified): `read_group` becomes public with signature `(domain, groupby, aggregates, having, offset, limit, order)` — old `fields=`/`lazy=` calls break; `_table_query` removed; `_check_access` deprecated; tracking values removed.
 - **Frontend**: **OWL 3** (22 breaking changes in the 2->3 guide; the compatibility layer is a temporary bridge only).
 - **Removed/merged modules**: `base_vat`, `base_iban`, `stock_picking_batch` (-> `stock`), `website_sale_wishlist` / `website_sale_comparison` (-> `website_sale`), `hr_org_chart`, `hr_homeworking`, `delivery_mondialrelay`, `transifex`, `hr_work_entry_holidays`, `l10n_fr_hr_work_entry_holidays` — fix `depends` and inherited code.
-- **External API**: XML-RPC/JSON-RPC deprecated; `db` service removed in 20; `common`/`object` removed in Odoo 22 (fall 2028). Move integrations to JSON-2 `/json/2/<model>/<method>` (Custom plan).
+- **External API**: XML-RPC/JSON-RPC deprecated; `db` service removed in 20; `common`/`object` removed in Odoo 22 (fall 2028). Move integrations to JSON-2 `/json/2/<model>/<method>` (not on One App Free or Standard plans).
 - **Functional data**: Field Service discontinued (-> Planning); payroll work entries removed; account groups -> parent accounts; payment statuses renamed; bank-impacting entries must come from bank transactions; expenses become draft vendor bills.
 
 ## When NOT to rush
