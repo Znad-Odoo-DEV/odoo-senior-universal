@@ -48,4 +48,4 @@ Confirmed Odoo 18.0 docs:
 - https://www.odoo.com/documentation/18.0/applications/sales/subscriptions/reports.html
 - https://www.odoo.com/documentation/18.0/applications/sales/subscriptions/automatic_payments.html
 - https://www.odoo.com/documentation/18.0/applications/sales/subscriptions/ecommerce.html
-- https://www.odoo.com/documentation/18.0/applications/sales/subscriptions/subscriptions_deliveries.html
+- https://www.odoo.com/documentation/18.0/applications/sales/subscriptions.html
