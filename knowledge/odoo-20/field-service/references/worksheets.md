@@ -1,6 +1,6 @@
 # Worksheets: what replaces them after Field Service
 
-Field Service is discontinued in Odoo 20; its features moved into Planning. Whether worksheets exist natively in Planning/Project in 20 is not established here (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/applications/services/planning.html). Old page: https://www.odoo.com/documentation/20.0/applications/services/field_service/worksheets.html (verify in 20.0 docs; app discontinued).
+Field Service is discontinued in Odoo 20; its features moved into Planning. Whether worksheets exist natively in Planning/Project in 20 is not established here (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/applications/services/planning.html). Old page: https://www.odoo.com/documentation/20.0/applications/services/field_service.html (verify in 20.0 docs; app discontinued).
 
 ## What worksheets were in 17-19
 - Structured onsite capture: instructions, to-do lists, checkboxes, bullets, blank fields, HTML, files, images, links.
