@@ -1,6 +1,6 @@
 ---
 description: Odoo backend/frontend development conventions (Python/ORM, views, security, OWL)
-globs: ["**/*.py", "**/*.xml", "**/*.js", "**/*.csv", "**/__manifest__.py"]
+globs: **/*.py, **/*.xml, **/*.js, **/*.csv, **/__manifest__.py
 alwaysApply: false
 ---
 
