@@ -1,6 +1,6 @@
 # Analytics & Dashboards via the UI (Odoo 17)
 
-Docs: https://www.odoo.com/documentation/17.0/applications/essentials/search.html ; https://www.odoo.com/documentation/17.0/applications/essentials/reporting.html (verify page in 17.0 docs) ; Spreadsheet: https://www.odoo.com/documentation/17.0/applications/productivity/spreadsheet.html ; Dashboards (Enterprise): https://www.odoo.com/documentation/17.0/applications/productivity/dashboards.html (verify)
+Docs: https://www.odoo.com/documentation/17.0/applications/essentials/search.html ; https://www.odoo.com/documentation/17.0/applications/essentials/reporting.html (verify page in 17.0 docs) ; Spreadsheet: https://www.odoo.com/documentation/17.0/applications/productivity/spreadsheet.html ; Dashboards (Enterprise): https://www.odoo.com/documentation/17.0/applications/productivity.html (verify)
 
 ## 1. Think first
 Question > measure (what to sum/count/avg) > dimension (by what) > period > comparison > audience > refresh. Start in the transactional app's own list/pivot/graph; escalate to spreadsheet/dashboard only when stakeholders need a persistent view.
@@ -29,7 +29,7 @@ Use Reporting menu per app: Sales > Reporting (Sales, Salespersons, Products, Cu
 
 ## 5. Spreadsheet & Dashboards (Enterprise)
 - **Spreadsheet** (Documents/Dashboards): Excel-like with Odoo data functions: `ODOO.PIVOT`, `ODOO.LIST`, `ODOO.FILTER.VALUE`, `ODOO.CURRENCY.RATE`, `ODOO.ACCOUNT.BALANCE` etc. Create by: view > Insert in Spreadsheet (pivot/list/graph), or Documents > New Spreadsheet. Global filters (date, relation, text) bind to pivots/charts across sheets. Refresh to update. Share via Documents with access groups. Templates/freeze/format as Excel.
-- **Dashboards app**: dashboards built from spreadsheets; sections, access by group, global filters; use "Add to dashboard" from a graph/pivot/list. Quick KPIs with scorecards. (https://www.odoo.com/documentation/17.0/applications/productivity/dashboards.html — verify)
+- **Dashboards app**: dashboards built from spreadsheets; sections, access by group, global filters; use "Add to dashboard" from a graph/pivot/list. Quick KPIs with scorecards. (https://www.odoo.com/documentation/17.0/applications/productivity.html — verify)
 - Spreadsheet vs export: spreadsheet stays live; export is static snapshot.
 - Studio dashboard view: tiles via aggregates (Count/Sum with domain), graphs, pivots — no code.
 
