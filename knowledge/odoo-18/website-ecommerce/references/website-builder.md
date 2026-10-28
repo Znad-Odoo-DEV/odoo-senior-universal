@@ -1,7 +1,7 @@
 # Website builder, pages, themes, menus, multi-website
 
 Confirmed Odoo 18.0 docs sections (website.html): website_creation, web_design, structure, configuration, reporting, mail_groups
-- https://www.odoo.com/documentation/18.0/applications/websites/website/website_creation.html
+- https://www.odoo.com/documentation/18.0/applications/websites/website.html
 - https://www.odoo.com/documentation/18.0/applications/websites/website/web_design.html
 - https://www.odoo.com/documentation/18.0/applications/websites/website/structure.html
 - https://www.odoo.com/documentation/18.0/applications/websites/website/configuration.html
