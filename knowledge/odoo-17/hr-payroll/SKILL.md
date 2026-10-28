@@ -46,4 +46,4 @@ description: Senior Odoo 17 HR and Payroll expertise. Use for Odoo 17 HR — emp
 Docs entry points for 17.0 (deep-page paths in the references follow the 19.0 layout with the version swapped; verify they resolve):
 - https://www.odoo.com/documentation/17.0/applications/hr.html
 - https://www.odoo.com/documentation/17.0/applications/hr/payroll.html
-- https://www.odoo.com/documentation/17.0/applications/hr/payroll/payroll_localizations.html
+- https://www.odoo.com/documentation/17.0/applications/hr/payroll.html
