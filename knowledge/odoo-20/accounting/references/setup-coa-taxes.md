@@ -5,7 +5,7 @@ Docs (ported from the 19.0 layout; verify in 20.0 docs): https://www.odoo.com/do
 
 ## Chart of accounts
 - Path: Accounting > Configuration > Chart of Accounts. The chart comes from the installed fiscal localization package (see localization.md).
-- Account fields: code, name, type, taxes (default), tags, allowed journals, "Allow Reconciliation", currency (to force one), deprecated flag (hide without deleting).
+- Account fields: code, name, type, taxes (default), tags, allowed journals, "Payment Reconciliation" (renamed from "Allow Reconciliation" in 20 — confirmed, release notes; it now also controls whether exchange-rate difference entries are expected on reconciliation), currency (to force one), deprecated flag (hide without deleting).
 - Account types drive behavior: Receivable / Payable (partner-bound, reconcilable), Bank and Cash, Credit Card, Current/Non-current Assets, Prepayments, Fixed Assets, Current/Non-current Liabilities, Equity, Current Year Earnings (system), Income, Other Income, Expense, Cost of Revenue, Depreciation, Off-Balance Sheet.
 - Code a company-wise numbering scheme and keep it consistent; multi-company: accounts are company-specific, chart can be shared via template.
 - Prefer adding accounts over repurposing used ones. Accounts with entries cannot change type to an incompatible one (verify in 20.0 docs: chart_of_accounts.html). Use "Merge" only for accounts with no conflicting config.
@@ -44,7 +44,7 @@ Docs: https://www.odoo.com/documentation/20.0/applications/finance/accounting/ta
 - Automatic detection: "Detect Automatically" with country/state/zip, Foreign Tax ID required, VAT required. Order of fiscal positions matters (sequence).
 - Manual: set on the partner (Sales & Purchase tab) or on the document.
 - Apply only if a mapping line exists: an unmapped tax stays unchanged; leave "Tax Applied" empty with a replacement tax to remove a tax.
-- VAT validation (VIES): .../taxes/vat_verification.html. Odoo 20: the `base_vat` module is removed, so VAT-number format/VIES validation and the "VAT required" detection check must be re-tested rather than assumed (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/applications/finance/accounting/taxes/vat_verification.html). EU distance selling / OSS: .../taxes/eu_distance_selling.html. B2B/B2C price display: .../taxes/B2B_B2C.html. AvaTax (US/CA, Enterprise): .../taxes/avatax.html.
+- VAT validation (VIES): .../taxes/vat_verification.html. Odoo 20: the `base_vat` module is removed, so VAT-number format/VIES validation and the "VAT required" detection check must be re-tested rather than assumed . The 20.0 page confirms VIES validation via Accounting > Configuration > Settings > "Verify VAT Numbers" (format check per country always; Intra-Community Valid checkbox for foreign partners) but names no module, so the base_vat removal is not confirmed by the docs: https://www.odoo.com/documentation/20.0/applications/finance/accounting/taxes/vat_verification.html. EU distance selling / OSS: .../taxes/eu_distance_selling.html. B2B/B2C price display: .../taxes/B2B_B2C.html. AvaTax (US/CA, Enterprise): .../taxes/avatax.html.
 
 ## Payment terms and rounding
 - Payment terms: Accounting > Configuration > Payment Terms (percent/fixed/balance lines with delays; early-payment discount). Docs: .../customer_invoices/payment_terms.html, .../customer_invoices/cash_discounts.html
