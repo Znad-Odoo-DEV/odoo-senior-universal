@@ -3,10 +3,11 @@
 Senior Odoo playbooks, organized by version and topic. Open the `SKILL.md` for a topic first (the concise playbook), then the `references/*.md` files it points to.
 
 ## Versions
+- `odoo-20/` — Odoo 20.0
 - `odoo-19/` — Odoo 19.0
 - `odoo-18/` — Odoo 18.0
-- `odoo-17/` — Odoo 17.0
-- `upgrades/` — `upgrade-17-to-18/`, `upgrade-18-to-19/` (process + custom-code migration)
+- `odoo-17/` — Odoo 17.0 (standard support ended Sept 2026)
+- `upgrades/` — `upgrade-17-to-18/`, `upgrade-18-to-19/`, `upgrade-19-to-20/` (process + custom-code migration)
 
 ## Topics (in each version)
 | Topic | Covers |
@@ -21,13 +22,13 @@ Senior Odoo playbooks, organized by version and topic. Open the `SKILL.md` for a
 | `sales-crm` | pipeline, quotations/orders, products/pricing, invoicing, forecasting |
 | `purchase` | RFQ/PO flow, vendors/pricelists, agreements, procurement, receipts/billing |
 | `manufacturing` | BoMs, MO flow, work centers/orders, subcontracting, planning/MPS |
-| `hr-payroll` | employees/contracts, time off/attendance, recruitment/appraisal, work entries/payslips |
+| `hr-payroll` | employees/contracts, time off/attendance, recruitment/appraisal, payslips (work entries up to 19; removed in 20) |
 | `project` | projects/tasks, planning, timesheets, profitability, collaboration |
 | `website-ecommerce` | website builder, catalog, checkout/payments, delivery/shipping, SEO |
 | `pos` | configuration/sessions, products/pricing, payments/hardware, restaurant, closing |
 | `studio` | fields/models, views/UI, automation/approvals, PDF documents, governance |
 | `elearning` | courses/content, quizzes/certification, enrollment/access, gamification |
-| `field-service` | tasks/scheduling, worksheets, time/products/billing, mobile workflow |
+| `field-service` | tasks/scheduling, worksheets, time/products/billing, mobile workflow (on 20: app discontinued — migration playbook to Planning) |
 | `subscriptions` | plans/products, lifecycle, billing/payments, MRR analytics |
 | `localization` | choosing/installing, framework, country approach, taxes/e-invoicing |
 
