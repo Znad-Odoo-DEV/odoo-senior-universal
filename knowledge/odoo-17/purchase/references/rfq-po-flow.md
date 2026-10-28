@@ -21,7 +21,7 @@ To Send (unsent), Waiting (sent, no answer), Late (past deadline).
 
 ## Senior notes
 - Unexpected RFQ splits: check the conditions above (grouping, warehouse, currency, dropship).
-- Purchase templates (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/inventory_and_mrp/purchase/manage_deals/purchase_templates.html)
+- Purchase templates (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/inventory_and_mrp/purchase/manage_deals.html)
 - Vendor bill management (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/inventory_and_mrp/purchase/manage_deals/manage.html)
-- EDI order import (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/inventory_and_mrp/purchase/advanced/edi.html)
+- EDI order import (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/inventory_and_mrp/purchase/advanced.html)
 - Alternatives/tenders: see agreements.md.
