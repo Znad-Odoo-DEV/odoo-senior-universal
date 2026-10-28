@@ -2,7 +2,7 @@
 
 > Provenance: items marked "confirmed on 19.0" were read from the 19.0 docs. The 20.0 pages could not be fetched, so every URL below is ported from the 19.0 layout (verify in 20.0 docs).
 
-Sources (ported from the 19.0 layout; verify in 20.0 docs): https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/restaurant.html ; https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/restaurant/urban_piper.html ; https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/restaurant/APAC_food_delivery.html ; https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/extra/preparation.html
+Sources (ported from the 19.0 layout; verify in 20.0 docs): https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/restaurant.html ; https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/restaurant/urban_piper.html ; https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/restaurant.html ; https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/extra/preparation.html
 
 ## Setup
 - Enable Is a Bar/Restaurant (Point of Sale section of settings); restaurant settings depend on it.
@@ -23,7 +23,7 @@ Sources (ported from the 19.0 layout; verify in 20.0 docs): https://www.odoo.com
 - Tips: tip with payment; Tip after payment is US only.
 
 ## Delivery and ordering
-- UrbanPiper: https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/restaurant/urban_piper.html ; APAC delivery: https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/restaurant/APAC_food_delivery.html ; needs Delivery Payment methods.
+- UrbanPiper: https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/restaurant/urban_piper.html ; APAC delivery: https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/restaurant.html ; needs Delivery Payment methods.
 - Self-ordering and presets (dine-in/takeaway): https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/extra/self_order.html, https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/extra/presets.html
 
 ## Pitfalls
