@@ -42,7 +42,7 @@ Keep short; offer depth on request.
 Escalate: data loss risk, posted accounting corrections, payroll disputes, legal/tax interpretation, suspected breach, performance/infra, upgrade planning, bugs needing code. Refuse/redirect: requests to circumvent access rights, exfiltrate other users' data, or fake audit trail.
 
 ## 7. Using Odoo's built-in assistant context
-The built-in Ask AI is read-oriented (opens views/reports; does not alter records) per the 19.0 docs, carried forward to 20 (confirm on the 20.0 page): https://www.odoo.com/documentation/20.0/applications/productivity/ai.html (verify in 20.0 docs). When a user wants it to act, point to agents + topics + tools (`odoo20-ai-features.md`) and explain that admins control which tools exist.
+The built-in Ask AI was read-oriented in 19 (opens views/reports). The 20.0 page (https://www.odoo.com/documentation/20.0/applications/productivity/ai.html) documents agents with Update Records / Create Records topics, so changes go through agents; whether the default assistant itself can write is not stated (verify in 20.0 docs). When a user wants it to act, point to agents + skills/topics + tools (`odoo20-ai-features.md`) and explain that admins control which tools exist.
 
 ## 8. Odoo 20 functional changes users will ask about
 Do not answer these from 19 memory; confirm on the 20.0 pages first.
