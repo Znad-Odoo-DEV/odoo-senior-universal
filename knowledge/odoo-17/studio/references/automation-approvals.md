@@ -1,5 +1,5 @@
 # Automation, webhooks, approvals (Studio, Odoo 17)
-Docs: https://www.odoo.com/documentation/17.0/applications/studio/automated_actions.html , https://www.odoo.com/documentation/17.0/applications/studio/automated_actions/webhooks.html , https://www.odoo.com/documentation/17.0/applications/studio/approval_rules.html (verify sub-page paths resolve in 17.0)
+Docs: https://www.odoo.com/documentation/17.0/applications/studio/automated_actions.html , https://www.odoo.com/documentation/17.0/applications/studio/automated_actions.html , https://www.odoo.com/documentation/17.0/applications/studio/approval_rules.html (verify sub-page paths resolve in 17.0)
 
 ## Automation rules (Automated Actions in 17)
 - Naming: Odoo 17 labels these "Automated Actions" (Settings > Technical > Automation); the "Automation Rules" name and the regrouped trigger list come with later versions (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/studio/automated_actions.html).
@@ -12,7 +12,7 @@ Docs: https://www.odoo.com/documentation/17.0/applications/studio/automated_acti
 - Practice: prefer Update/Create Activity/Send Email over Execute Python Code; keep code short and in Odoo 17 idiom (`_()` for translations, `check_access_rights`/`check_access_rule`, list-of-tuples domains, `groups_id`); guard against a rule re-triggering itself with Before Update Domain.
 
 ## Webhooks (incoming)
-Verify incoming-webhook support and menu names in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/studio/automated_actions/webhooks.html . In 17 the external API for custom clients is XML-RPC (`/xmlrpc/2/common`, `/xmlrpc/2/object`) and JSON-RPC (`/jsonrpc`), not `/json/2`.
+Verify incoming-webhook support and menu names in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/studio/automated_actions.html . In 17 the external API for custom clients is XML-RPC (`/xmlrpc/2/common`, `/xmlrpc/2/object`) and JSON-RPC (`/jsonrpc`), not `/json/2`.
 - External system POSTs JSON to a generated Odoo URL; Odoo runs predefined actions. Event-driven, unlike scheduled actions.
 - Setup: Studio > Webhooks > New (or Automated Actions with the webhook trigger). Name, Model (developer mode to choose), copy URL, **Rotate Secret** to replace it, optional **Log Calls**.
 - Target Record code locates the record in the payload; Odoo senders must include `id` and `model`; to create records use `model.browse(i)`/`model.search(i)`. Anything other than updating an existing record (e.g., create) needs an Execute Python Code action.
