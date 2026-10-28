@@ -6,11 +6,11 @@ alwaysApply: false
 
 When writing or reviewing Odoo module code, follow the senior developer playbook for the target version:
 
-- Load `@knowledge/odoo-19/developer/SKILL.md` (or `odoo-18` / `odoo-17`) and its `references/` — `orm.md`, `models-fields.md`, `views-owl.md`, `security.md`, `performance-testing.md`, and the per-version changes file (`v19-changes.md` / `v18-changes.md` / `v17-changes.md`).
+- Load `@knowledge/odoo-20/developer/SKILL.md` (or `odoo-19` / `odoo-18` / `odoo-17`) and its `references/` — `orm.md`, `models-fields.md`, `views-owl.md`, `security.md`, `performance-testing.md`, and the per-version changes file (`v20-changes.md` / `v19-changes.md` / `v18-changes.md` / `v17-changes.md`).
 - Models: `_description` always, recordset methods, `@api.model_create_multi`, complete `@api.depends`, `store=True` only when searched/grouped/sorted.
 - DB-side search/group (`search_fetch`, `_read_group`, domains); no `search`/`browse` in loops; no `cr.commit()`; parameterized `odoo.tools.SQL` only.
-- Security with every model: `ir.model.access.csv`, record rules, group-gated fields/menus/buttons; `sudo()` only narrowly and commented.
-- **Match the version's syntax:** list root `<tree>` (17) vs `<list>` (18/19); `oe_chatter` div (17) vs `<chatter/>` (18/19); `check_access_rights`/`_rule` (17) vs `check_access`/`has_access` (18/19); `groups_id` (17/18) vs `group_ids` (19); `_sql_constraints` (17/18) vs declarative `models.Constraint` (19). No `attrs`/`states` (removed in 17). Owl 2; `t-out` not `t-raw`.
-- Tests: `TransactionCase`, `HttpCase`/tours, `Form`; QUnit (17) or Hoot (18/19) for JS.
+- Security with every model: `ir.model.access.csv` + record rules (17/18/19) or `ir.access.csv` (20 — ACLs and record rules merged into `ir.access`, `domain` column for row filtering), group-gated fields/menus/buttons; `sudo()` only narrowly and commented.
+- **Match the version's syntax:** list root `<tree>` (17) vs `<list>` (18/19/20); `oe_chatter` div (17) vs `<chatter/>` (18/19/20); `check_access_rights`/`_rule` (17) vs `check_access`/`has_access` (18/19/20; `_check_access` deprecated in 20); `groups_id` (17/18) vs `group_ids` (19/20); `_sql_constraints` (17/18) vs declarative `models.Constraint` (19/20); `ir.model.access.csv` + `ir.rule` (17/18/19) vs `ir.access.csv` (20); `_read_group` (17/18/19) vs public `read_group(domain, groupby, aggregates, having, offset, limit, order)` (20 — `fields=`/`lazy=` break, `_table_query` removed). No `attrs`/`states` (removed in 17). Owl 2 (17/18/19) vs **OWL 3** (20); `t-out` not `t-raw`. Python 3.12 / PostgreSQL 16 on 20.
+- Tests: `TransactionCase`, `HttpCase`/tours, `Form`; QUnit (17) or Hoot (18/19/20) for JS.
 
 Never edit core; extend via `_inherit`/xpath. Never invent an API — verify against the version's docs.
