@@ -1,0 +1,13 @@
+---
+description: Odoo version upgrades (17→18, 18→19) — process and custom-code migration
+alwaysApply: false
+---
+
+For upgrading an Odoo database or porting custom modules between majors, use:
+
+- `@knowledge/upgrades/upgrade-17-to-18/SKILL.md` (+ `references/upgrade-process.md`, `references/code-migration.md`)
+- `@knowledge/upgrades/upgrade-18-to-19/SKILL.md` (+ `references/upgrade-process.md`, `references/code-migration.md`)
+
+Two halves, both required: (1) the database upgrade via Odoo's upgrade platform (test request → validate → production), and (2) making custom modules compatible with the target version first. Make custom code target-ready before requesting the production upgrade; rehearse on a test database; keep a restorable backup.
+
+Headline custom-code changes: **17→18** `<tree>`→`<list>`, `oe_chatter`→`<chatter/>`, kanban `kanban-box`→`card`, `check_access_rights/_rule`→`check_access`/`has_access`, QUnit→Hoot, `publicWidget`→`Interaction`, `ir.property`/cron `numbercall` removed. **18→19** `groups_id`→`group_ids` (+`res.groups.privilege`), `_sql_constraints`→declarative `models.Constraint`, optional `Domain` class, external API `/json/2` (XML-RPC/JSON-RPC deprecated).
