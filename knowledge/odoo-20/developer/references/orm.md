@@ -1,8 +1,8 @@
 # ORM (Odoo 20)
 
-Docs: https://www.odoo.com/documentation/20.0/developer/reference/backend/orm.html — changelog: https://www.odoo.com/documentation/20.0/developer/reference/backend/orm/changelog.html (ported from the 19.0 layout; verify in 20.0 docs)
+Docs: https://www.odoo.com/documentation/20.0/developer/reference/backend/orm.html — changelog: https://www.odoo.com/documentation/20.0/developer/reference/backend/orm/changelog.html (changelog checked against 20.0)
 
-Runtime: Python >= 3.12, PostgreSQL >= 16. Breaking in 20 for this file: public `read_group` with a new signature, `_table_query` removed, `_check_access` deprecated, tracking values removed (see "Removed and deprecated in 20" below and `v20-changes.md`).
+Runtime: Python >= 3.12, PostgreSQL >= 16 (confirmed). Of the items below, only `_table_query` removed is in the 20.0 changelog; the others are unverified. Breaking in 20 for this file: public `read_group` with a new signature, `_table_query` removed, `_check_access` deprecated, tracking values removed (see "Removed and deprecated in 20" below and `v20-changes.md`).
 
 ## Recordsets and environment
 - A recordset is an ordered set of ids of one model. `self.env` = (cr, uid, context, su). Access: `self.env['res.partner']`, `self.env.user`, `self.env.company`, `self.env.companies`, `self.env.context`, `self.env.ref('mod.xmlid')`, `self.env.lang`.
@@ -29,7 +29,7 @@ Runtime: Python >= 3.12, PostgreSQL >= 16. Breaking in 20 for this file: public 
 - Name/display search: since 17 `_search_display_name` and `_compute_display_name`; `name_get`/`_name_search` overrides are removed.
 
 ## Grouping and aggregates
-- **`read_group` is public in 20 with signature `read_group(domain, groupby, aggregates, having, offset, limit, order)`.** Old calls written for the pre-20 API with `fields=` or `lazy=` BREAK: rewrite them with `groupby` specs (`'partner_id'`, `'date:month'`) and `aggregates` (`'__count'`, `'amount:sum'`, `'id:count_distinct'`, `'date:max'`). Default values of the optional arguments, the exact return format (dicts vs tuples) and the fate of `formatted_read_group`: (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/developer/reference/backend/orm.html and the changelog).
+- **`read_group` is public in 20 with signature `read_group(domain, groupby, aggregates, having, offset, limit, order)`.** (Unverified: the changelog lists `read_group` deprecated in favor of `_read_group` under 18.0 and nothing for 20.0.) Old calls written for the pre-20 API with `fields=` or `lazy=` BREAK: rewrite them with `groupby` specs (`'partner_id'`, `'date:month'`) and `aggregates` (`'__count'`, `'amount:sum'`, `'id:count_distinct'`, `'date:max'`). Default values of the optional arguments, the exact return format (dicts vs tuples) and the fate of `formatted_read_group`: (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/developer/reference/backend/orm.html and the changelog).
 - `_read_group(domain, groupby=(), aggregates=(), having=(), offset=0, limit=None, order=None)` still returns a list of tuples in order groupby..., aggregates... Many2one groupby values come back as recordsets. `web_read_group` stays the web client's entry point. (verify unchanged in 20.0 docs)
 - Old pattern to find and fix: `read_group(domain, ['amount_total:sum'], ['partner_id'], lazy=False)`; new shape: `read_group(domain, ['partner_id'], ['amount_total:sum'])`.
 - Pattern: replace per-record `search_count` loops with one grouped query (`_read_group` or `read_group`) and a dict lookup.
@@ -52,9 +52,9 @@ Runtime: Python >= 3.12, PostgreSQL >= 16. Breaking in 20 for this file: public 
 - `ir.cron` records in XML (`model_id`, `state=code`, `code=model._cron_method()`, `interval_number/type`, `active`). Make crons idempotent and batch with limits; use `self.env['ir.cron']._commit_progress` / `_trigger()` patterns for large backlogs (introduced in 18; verify in 20.0 docs: https://www.odoo.com/documentation/20.0/developer/reference/backend/orm.html). Never call `cr.commit()` outside this framework.
 
 ## Removed and deprecated in 20
-- **`_table_query` removed.** Models that defined a SQL-backed table through `_table_query` must be reimplemented. The supported replacement is (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/developer/reference/backend/orm/changelog.html); the long-standing `_auto = False` plus a view created in `init()` is the fallback to validate on 20, not a promise.
-- **`_check_access` deprecated.** Call `check_access(operation)`, `has_access(operation)`, `_filtered_access(operation)`; do not call or newly override `_check_access`.
-- **Tracking values removed.** Chatter tracking messages are generated on the fly instead of being read back from stored tracking-value records. Code, SQL or reports that read stored tracking values must switch to the message history; whether and how `tracking=True` on fields and the `tracking_disable` / `mail_notrack` context keys behave is (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/developer/reference/backend/orm/changelog.html).
+- **`_table_query` removed.** Models that defined a SQL-backed table through `_table_query` must be reimplemented. Confirmed by the 20.0 changelog; it names no replacement: (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/developer/reference/backend/orm/changelog.html); the long-standing `_auto = False` plus a view created in `init()` is the fallback to validate on 20, not a promise.
+- **`_check_access` deprecated** (not in the 20.0 changelog: unverified). Call `check_access(operation)`, `has_access(operation)`, `_filtered_access(operation)`; do not call or newly override `_check_access`.
+- **Tracking values removed** (not in the 20.0 changelog: unverified). Chatter tracking messages are generated on the fly instead of being read back from stored tracking-value records. Code, SQL or reports that read stored tracking values must switch to the message history; whether and how `tracking=True` on fields and the `tracking_disable` / `mail_notrack` context keys behave is (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/developer/reference/backend/orm/changelog.html).
 - **Old-style `read_group` calls** (`fields=`, `lazy=`) break: see "Grouping and aggregates".
 - **Security models**: `ir.model.access` and `ir.rule` no longer exist separately; use `ir.access` (see `security.md`).
 
