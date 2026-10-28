@@ -49,4 +49,4 @@ Odoo 17.0 docs (landing page is stable; sub-page paths were ported from the newe
 - https://www.odoo.com/documentation/17.0/applications/sales/subscriptions/reports.html
 - https://www.odoo.com/documentation/17.0/applications/sales/subscriptions/automatic_payments.html
 - https://www.odoo.com/documentation/17.0/applications/sales/subscriptions/ecommerce.html
-- https://www.odoo.com/documentation/17.0/applications/sales/subscriptions/subscriptions_deliveries.html
+- https://www.odoo.com/documentation/17.0/applications/sales/subscriptions.html
