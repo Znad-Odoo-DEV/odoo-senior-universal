@@ -1,6 +1,6 @@
 # Framework: what an l10n package is
 
-Confirmed on the 19.0 version of https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations.html (20.0 page not fetched; verify in 20.0 docs): fiscal localizations are country-specific modules for compliance with a country's fiscal requirements; they mainly serve Accounting and can matter for Point of Sale and eCommerce. After install you adjust the chart of accounts, activate the taxes you use, and configure country-specific statements and certifications.
+Confirmed on the 20.0 page https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations.html (package chosen in Accounting > Configuration > Settings, Fiscal Localization; changing it is only possible if no entry has been posted; branches follow their parent company): fiscal localizations are country-specific modules for compliance with a country's fiscal requirements; they mainly serve Accounting and can matter for Point of Sale and eCommerce. After install you adjust the chart of accounts, activate the taxes you use, and configure country-specific statements and certifications.
 
 ## Typical contents (general Odoo knowledge; verify per country)
 - Chart of accounts template (accounts, account types, and the account structure: parent accounts in 20, which replace account groups).
@@ -8,7 +8,7 @@ Confirmed on the 19.0 version of https://www.odoo.com/documentation/20.0/applica
 - Fiscal positions (domestic, intra-community/export, etc., depending on country).
 - Country-specific reports and statements; sometimes legal formats and exports.
 - Sometimes: bank/payment formats, document types, partner tax-ID types, e-invoicing/EDI formats, POS or eCommerce adaptations.
-- The main page does not list components (verify in 20.0 docs: the country page).
+- The main page lists countries (about 47 with a dedicated page) but not components; see the country page.
 
 ## How it loads (technical; verify against your source tree)
 - Modules are conventionally named `l10n_<country code>` (e.g. `l10n_de`, `l10n_in`); related add-ons add suffixes for features (reports, EDI, POS...). List actual modules with `ls addons/ | grep l10n_` on your version.
