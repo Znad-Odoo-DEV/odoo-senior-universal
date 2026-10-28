@@ -14,10 +14,10 @@ Docs (ported from the 19.0 layout; verify in 20.0 docs): https://www.odoo.com/do
 
 ## How it is applied
 - Selected per company: Accounting > Configuration > Settings > Fiscal Localization > Package (or at company creation/database setup from the company's country).
-- Installation loads the chart template into the company; install **before** posting entries. Once journal entries exist, switching packages is restricted and only done with care (verify in 20.0 docs: fiscal_localizations.html).
-- Multi-company: each company has its own package; branches share the parent chart (verify in 20.0 docs). Intercompany rules and consolidation are separate configuration.
+- Installation loads the chart template into the company; install **before** posting entries. Once journal entries exist, switching packages is only possible if no entry has been posted (confirmed on the 20.0 docs: fiscal_localizations.html).
+- Multi-company: each company has its own package; branches always follow the parent company's localization, so entities in different countries must be separate companies (confirmed on the 20.0 docs: fiscal_localizations.html). Intercompany rules and consolidation are separate configuration.
 - Updating: module upgrades can add new taxes/accounts to the chart template; they are not auto-applied to existing companies with data — review via the "update chart template" mechanism if your version offers it (verify in 20.0 docs).
-- Odoo 20 charts use parent accounts instead of account groups; package charts and statutory mappings follow that model (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/applications/finance/accounting/get_started/chart_of_accounts.html).
+- Odoo 20 charts use parent accounts instead of account groups — confirmed in the 20 release notes ("Account groups have been replaced by parent accounts as the method of structuring charts of accounts"; account codes are now optional). The 20.0 chart_of_accounts.html page still describes account groups and had not been updated when checked. Source: https://www.odoo.com/odoo-20-release-notes
 
 ## Choosing one
 1. Match the company's country of tax residence (not its customers'); a company needs one package.
