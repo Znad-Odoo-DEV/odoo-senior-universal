@@ -14,7 +14,7 @@ Docs (ported from the 19.0 layout; verify in 20.0 docs): tracking https://www.od
 - Traceability: lot/serial form and traceability view (upstream/downstream) for recalls.
 - Reassign lot/serial numbers: follow the reassign page, never DB edits.
 - Expiration dates: needs the Expiration Dates setting; product times (expiration, best before, removal, alert) compute lot dates at creation. Use FEFO to pick earliest expiry. Blocking expired lots: verify in 20.0 docs (expiration_dates page).
-- Batch and wave picking of tracked products: core in 20 (`stock_picking_batch` merged into `stock`); lot/serial entry still happens per move line (see routes-operations.md; verify in 20.0 docs: https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/picking_methods/batch.html).
+- Batch and wave picking of tracked products: core in 20 (`stock_picking_batch` merged into `stock`); lot/serial entry still happens per move line (see routes-operations.md; the 20.0 index lists batch and wave pages under Picking methods: https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/picking_methods/batch.html).
 
 ## Packages (not lots)
 - Packages group products physically (pallet/box); package types hold dimensions/weight; pack-in-pack nests them (https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/pack_in_pack.html). "Put in Pack" on pickings.
