@@ -5,7 +5,7 @@ Docs (ported from the 19.0 layout; verify in 20.0 docs): https://www.odoo.com/do
 
 ## Odoo 20 changes in this area (vs 19)
 - Bank-impacting journal entries must originate from bank transactions: every entry that moves a bank/cash account comes from a bank transaction (bank feed, file import, or a transaction created in the bank journal). No manual journal entries against bank accounts. (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/transactions.html)
-- Payment statuses are renamed: the 19 labels quoted below (Paid / In Payment / Partial / Not paid) are legacy names. Re-map filters, automations and reports to the 20 labels. (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/applications/finance/accounting/payments.html)
+- Payment statuses are renamed in 20 (confirmed, release notes): "In Process" → "Paid", and "Paid" → "Reconciled"; the "Mark as Reconciled" button moved to the action menu. Re-map filters, automations and reports from the 19 labels to these. Source: https://www.odoo.com/odoo-20-release-notes
 - Expenses become draft vendor bills: expense-originated bills appear as drafts in Accounting > Vendors > Bills for review and posting. (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/applications/finance/expenses.html)
 - `base_iban` is removed: IBAN validation on partner and company bank accounts must be re-tested (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank.html).
 
@@ -28,7 +28,7 @@ Docs (ported from the 19.0 layout; verify in 20.0 docs): https://www.odoo.com/do
 
 ## Payments
 - Register payment from invoice/bill: journal (bank/cash), payment method (manual, checks, SEPA, batch, provider), amount, date, memo. Posting creates a payment entry (outstanding account vs receivable/payable) and reconciles with the invoice. The invoice is reconciled with the payment entry; the later bank transaction match clears the outstanding account. (This is the 19 model; confirm the 20 mechanics in 20.0 docs: .../payments.html.)
-- Statuses (19 names, renamed in 20): Paid / In Payment (payment registered but bank line not yet matched) / Partial / Not paid. Before changing any filter, map each of these four meanings to its 20 label (verify in 20.0 docs: .../payments.html).
+- Statuses in 20 (confirmed, release notes): "Paid" = payment registered (the 19 "In Process"/"In Payment"); "Reconciled" = matched with a bank transaction (the 19 "Paid"). Map every filter, automation and report from the 19 labels to these before go-live.
 - Batch payments (group customer/vendor payments for one bank line): .../payments/batch.html . SEPA credit transfer/direct debit: .../payments/sepa_payments.html (partner IBANs: `base_iban` removed in 20, re-test validation) . Checks: .../payments/pay_checks.html
 - Payment terms with installments produce multiple receivable lines; each reconciles separately.
 - Online payment providers: finance > payment_providers (separate docs).
@@ -54,7 +54,7 @@ Docs: .../bank.html , .../bank/transactions.html , .../bank/reconciliation.html
 - Use Reset to Draft sparingly; allowed only if no lock date blocks it and the entry is not part of a locked/e-filed period; reverse instead when in doubt.
 
 ## Typical troubleshooting
-- Invoice stays in the 19 "In Payment" state (renamed in 20): payment not matched to a bank transaction; reconcile the bank transaction with the payment.
+- Invoice stays "Paid" (20 label: payment registered) and never reaches "Reconciled": the payment was not matched to a bank transaction; reconcile the bank transaction with the payment.
 - Duplicate bank line imported: use unique transaction IDs; remove the draft/unreconciled bank transaction, never delete reconciled entries.
 - Wrong partner on payment: reset to draft (if permitted), fix partner, repost, re-reconcile.
 - Need to correct a bank balance: create the missing or reversing bank transaction; do not post a manual entry on the bank account.
