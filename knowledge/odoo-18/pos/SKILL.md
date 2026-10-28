@@ -39,7 +39,7 @@ description: Senior Odoo 18 Point of Sale expertise. Use for Odoo 18 PoS — con
 
 Odoo 18 docs (page paths follow the docs index; verify each exists in 18):
 - https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html (landing)
-- https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/use.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/use/receipts.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/use/pos_invoices.html
-- https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/products.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/shop.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/reporting.html
-- https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/payment_methods.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/hardware_network.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/restaurant.html
-- https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/extra.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/extra/pricing.html
+- https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html
+- https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/shop.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/reporting.html
+- https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/payment_methods.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/restaurant.html
+- https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html
