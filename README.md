@@ -23,6 +23,16 @@ Topics (per version): `developer`, `techno-functional`, `functional`, `implement
 
 Each topic has a concise `SKILL.md` playbook plus deeper `references/*.md`, grounded in `https://www.odoo.com/documentation/<version>/` with "(verify in <version> docs: …)" markers where a detail should be confirmed against the live page.
 
+## Install
+
+One-liner (Ubuntu / macOS, needs only git):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Znad-Odoo-DEV/odoo-senior-universal/main/install.sh | bash -s -- --tool cursor --version 19 --target .
+```
+
+Use `--tool copilot|agents|claude|all`, `--version 17|18|19|20`, `--upgrades`, `--target <dir>`. Manual per-tool commands, prerequisites and the update step are in [INSTALL.md](INSTALL.md).
+
 ## Use it with your tool
 
 ### Cursor
