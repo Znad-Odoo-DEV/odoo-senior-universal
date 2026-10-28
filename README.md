@@ -52,7 +52,7 @@ Odoo changes across majors; this pack keeps the versions separate so answers sta
 | Security files | `ir.model.access.csv` + `ir.rule` | `ir.model.access.csv` + `ir.rule` | `ir.model.access.csv` + `ir.rule` | **`ir.access.csv`** (ACLs + record rules merged into `ir.access`) |
 | Security field | `groups_id` | `groups_id` | `group_ids` (+ `res.groups.privilege`) | `group_ids` (+ `res.groups.privilege`) |
 | SQL constraints | `_sql_constraints` | `_sql_constraints` | declarative `models.Constraint`/`Index` | declarative `models.Constraint`/`Index` |
-| Grouping API | `_read_group` | `_read_group` | `_read_group` | public `read_group(domain, groupby, aggregates, having, offset, limit, order)`; `_table_query` removed |
+| Grouping API | `_read_group` | `_read_group` | `_read_group` | `read_group` reported public with a new signature (not in the published 20.0 ORM changelog — verify); `_table_query` removed |
 | Translations | `_()` / `_lt()` | `self.env._()` | `self.env._()` | `self.env._()` |
 | Frontend framework | Owl 2 | Owl 2 | Owl 2 | **OWL 3** (22 breaking changes; compat layer temporary) |
 | JS tests / public JS | QUnit / `publicWidget` | Hoot / `Interaction` | Hoot / `Interaction` | Hoot / `Interaction` |
