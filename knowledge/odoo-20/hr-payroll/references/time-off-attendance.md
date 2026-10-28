@@ -17,7 +17,7 @@ Docs: https://www.odoo.com/documentation/20.0/applications/hr/attendances.html
 Sub-pages (confirmed on 19.0): check_in_check_out, kiosks, attendance_onboarding, management, attendance_logs, overtime, hardware, attendance_reporting, time_off_ledger.
 - Modes: Attendances from Backend (check in/out in database, else kiosk), Automatic Check-Out (after tolerance hours past schedule end), Absence Management (absences not tied to time off; not for flexible schedules).
 - Kiosk: dedicated device; can show extra hours at checkout if enabled.
-- Overtime: tolerance in favor of company/employee; extra hours validation automatic or manager-approved; approved extra hours can be deducted from approved time off. The 19.0 docs have an "Overtime rulesets" page (verify it exists in 20.0 docs: https://www.odoo.com/documentation/20.0/applications/hr/attendances/overtime.html).
+- Overtime: tolerance in favor of company/employee; extra hours validation automatic or manager-approved; approved extra hours can be deducted from approved time off. The "Overtime rulesets" page exists in 20.0 (confirmed: the 20.0 docs have an "Overtime rulesets" page under Configuration > Overtime Rulesets, no rulesets preconfigured, quantity-based and timing-based rules, rate combination mode: https://www.odoo.com/documentation/20.0/applications/hr/attendances/overtime.html).
 - Any user can check in/out even without app access.
 
 ## Senior notes
