@@ -26,4 +26,4 @@ Formerly "recurrence periods".
 - Decide Align to Period Start deliberately: clean calendar billing, but a prorated first invoice customers may question.
 - Set Automatic Closing longer than your payment-recovery window so a transient failure does not churn a good customer.
 - Mixed recurring plus one-time lines on one order: one-time lines bill once, recurring lines repeat (verify in 18.0 docs: https://www.odoo.com/documentation/18.0/applications/sales/subscriptions.html).
-- Deliveries with subscriptions: https://www.odoo.com/documentation/18.0/applications/sales/subscriptions/subscriptions_deliveries.html (details not reviewed).
+- Deliveries with subscriptions: https://www.odoo.com/documentation/18.0/applications/sales/subscriptions.html (details not reviewed).
