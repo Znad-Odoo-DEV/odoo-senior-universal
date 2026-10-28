@@ -1,6 +1,6 @@
 # Salary structures, rules, categories, inputs (Odoo 18 Payroll)
 
-Docs: https://www.odoo.com/documentation/18.0/applications/hr/payroll/salary_rules.html ; localizations: https://www.odoo.com/documentation/18.0/applications/hr/payroll/payroll_localizations.html
+Docs: https://www.odoo.com/documentation/18.0/applications/hr/payroll.html ; localizations: https://www.odoo.com/documentation/18.0/applications/hr/payroll/payroll_localizations.html
 LOCALIZATION-DEPENDENT: structures and rules come from the country module; do not assume universal rules.
 
 ## Model
@@ -11,7 +11,7 @@ LOCALIZATION-DEPENDENT: structures and rules come from the country module; do no
 - Name (shown on payslip); Code (required, case-sensitive); Category; Salary Structure (required); Sequence (required, ascending: lower runs first and feeds later rules); Appears on Payslip; Contributes to Employer Cost.
 
 ## Conditions
-- Always True; Salary Input (adds a dynamic field on employee, payslip, or both; unit Monetary/Quantity/Percentage/Checkbox; can depend on another input rule); Other Input (runs if a payslip line of the same input type exists); Python Expression (True/False); Domain. The condition set differs by version (earlier releases also offer Range); verify the options in the 18 UI and docs: https://www.odoo.com/documentation/18.0/applications/hr/payroll/salary_rules.html
+- Always True; Salary Input (adds a dynamic field on employee, payslip, or both; unit Monetary/Quantity/Percentage/Checkbox; can depend on another input rule); Other Input (runs if a payslip line of the same input type exists); Python Expression (True/False); Domain. The condition set differs by version (earlier releases also offer Range); verify the options in the 18 UI and docs: https://www.odoo.com/documentation/18.0/applications/hr/payroll.html
 - Python variables named in docs: payslip, employee, result_rules, categories, worked_days, inputs. Full list (on 18 the contract is exposed as `contract`; rule-parameter helper): (verify in 18.0 docs: salary_rules.html and the localization module source).
 
 ## Computation
