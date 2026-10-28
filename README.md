@@ -78,3 +78,7 @@ Always confirm edition (Community/Enterprise) and hosting (Online / Odoo.sh / on
 ## Scope & accuracy
 
 Grounded in the official Odoo documentation for each version. Details that should be re-checked against the live docs are flagged with "(verify …)" markers — treat those as prompts to confirm, especially for compliance-sensitive areas (accounting, payroll, tax, localization). This pack is independent and not affiliated with Odoo S.A.
+
+## License
+
+MIT — see [LICENSE](LICENSE). Use it, modify it, and ship it; the copyright notice stays.
