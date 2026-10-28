@@ -2,11 +2,11 @@
 
 Odoo 17.0 docs (paths ported from the newer-version doc set; verify each resolves in 17.0):
 - Web design: https://www.odoo.com/documentation/17.0/applications/websites/website/web_design.html
-- Structure: https://www.odoo.com/documentation/17.0/applications/websites/website/structure.html
+- Structure: https://www.odoo.com/documentation/17.0/applications/websites/website.html
 - Configuration: https://www.odoo.com/documentation/17.0/applications/websites/website/configuration.html
 - Reporting: https://www.odoo.com/documentation/17.0/applications/websites/website/reporting.html
 - eCommerce performance: https://www.odoo.com/documentation/17.0/applications/websites/ecommerce/performance.html
-- Google Merchant Center: https://www.odoo.com/documentation/17.0/applications/websites/ecommerce/google_merchant_center.html (verify the page and feature exist in 17.0; the product feed integration may be 18/19-only)
+- Google Merchant Center: https://www.odoo.com/documentation/17.0/applications/websites/ecommerce.html (verify the page and feature exist in 17.0; the product feed integration may be 18/19-only)
 - Dedicated SEO page (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/websites/website/pages/seo.html)
 
 ## On-page SEO
