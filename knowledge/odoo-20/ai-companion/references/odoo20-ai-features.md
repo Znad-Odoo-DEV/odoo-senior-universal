@@ -1,28 +1,28 @@
 # Built-in Odoo 20 AI features
 
 Base: https://www.odoo.com/documentation/20.0/applications/productivity/ai.html
-The built-in AI app (agents, topics, tools, sources, AI fields, AI server actions, default prompts, provider API keys) was introduced in Odoo 19 and carries forward to Odoo 20. This file keeps the findings read on the 19.0 pages; every sub-page URL below is ported from the 19.0 layout, so confirm it on 20.0 before quoting UI paths, field names or limits. Any 20-specific change (new providers or models, tools, topics, UI paths, credit/pricing rules) is NOT confirmed here: (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/applications/productivity/ai.html).
+The built-in AI app (agents, topics, tools, sources, AI fields, AI server actions, default prompts, provider API keys) was introduced in Odoo 19 and carries forward to Odoo 20. This file keeps the findings read on the 19.0 pages; every sub-page URL below is ported from the 19.0 layout, so confirm it on 20.0 before quoting UI paths, field names or limits. Confirmed on the 20.0 AI page (https://www.odoo.com/documentation/20.0/applications/productivity/ai.html): AI icon / Ctrl+K access, conversations open in Discuss, AI agents (System Prompt, skills, sources), AI fields, AI server actions, AI document sort, AI in email templates, voice transcription, image generation, AI in Live Chat, and an AI MCP server so an external agent can connect to Odoo. Built-in AI requests go through Odoo's In-App Purchase (IAP) service and consume IAP credits. Installing the AI app on the Standard plan triggers an upsell to the Custom plan. The page names no specific LLM providers.
 Status legend: CARRIED FROM 19 = content read on the cited 19.0 page and carried forward; re-confirm on the 20.0 page. LISTED = page appears in the official AI index but contents not read here; confirm before asserting details.
 
 ## CARRIED FROM 19 (read on 19.0 pages; re-confirm on 20.0)
 
 ### Ask AI / AI button
-- Open via command palette (Ctrl+K) or the AI button top-right; prompts vary by location. Reply can be sent as message, logged as chatter note, or copied; conversation can open in Discuss.
-- Read-only behavior: it can open views and show reports but cannot create or alter records.
-- Doc: ai.html (above).
+- Open via command palette (Ctrl+K) or the AI icon at the top of the screen (confirmed on 20.0); prompts vary by location. Reply can be sent as message, logged as chatter note, or copied; conversation can open in Discuss.
+- Read-only behavior (19): it can open views and show reports but cannot create or alter records. In 20 the Update Records / Create Records topics exist, so changes are possible through agents (verify exact behavior of the built-in assistant in 20.0 docs).
+- Doc: https://www.odoo.com/documentation/20.0/applications/productivity/ai.html
 
 ### AI agents, topics, tools, sources
-- Requires the AI app. Agent = name, description, LLM model (versions of ChatGPT and Gemini), Response Style (Analytical / Balanced / Creative), System Prompt, "Restrict to Sources".
-- Topics bundle instructions + tools. Preconfigured: Natural Language Search, Information retrieval, Create Leads (needs CRM). An agent with no topics can only give information.
+- Requires the AI app. Agent = System Prompt, skills, sources, "Restrict to Sources" (confirmed on 20.0). LLM model choice and Response Style (Analytical / Balanced / Creative) are carried from 19 and not seen on the 20.0 page (verify in 20.0 docs).
+- In 20 the docs call the bundles skills (Instructions + Tools); the preconfigured ones are listed as topics: View Builder, Information retrieval, Update Records, Create Records, Generate Images, Web Search, Website Builder, Create Leads (needs CRM). Natural Language Search from 19 is not in the 20.0 list. An agent with no skills can only give information and cannot change the database. Agents can be triggered by automated and scheduled actions.
 - Tools = functions (create lead, open view); available set depends on installed apps.
-- Sources: PDFs, web links, Documents files, Knowledge articles; usable once status is Indexed and Active is on.
+- Sources: PDFs, web links, Documents files, Knowledge articles; files attached during a conversation act as temporary sources unless added to the agent (confirmed on 20.0). "Indexed" status / Active toggle: carried from 19.
 - Test button opens a conversation to try the agent.
-- Doc: https://www.odoo.com/documentation/20.0/applications/productivity/ai/agents.html (verify in 20.0 docs)
+- Doc: https://www.odoo.com/documentation/20.0/applications/productivity/ai/agents.html
 
 ### API keys / providers
 - Providers: OpenAI (ChatGPT) and Google Gemini. Path: AI app > Configuration > Settings > Providers; tick "Use your own ... account", paste Key, Save.
 - Odoo.sh and on-premise must use own API keys; Odoo Online optional. Provider fees apply.
-- Doc: https://www.odoo.com/documentation/20.0/applications/productivity/ai/apikeys.html (verify in 20.0 docs)
+- The 20.0 API keys page is marked "under construction" and lists no providers or paths, so the provider claims above remain unverified (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/applications/productivity/ai/apikeys.html).
 
 ### AI server actions
 - Server action with Type = AI (Settings > Technical > Server Actions). Fields: Model, Prompt, Tools.
