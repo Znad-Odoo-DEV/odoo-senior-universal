@@ -1,0 +1,58 @@
+# Models, Fields, Module Structure (Odoo 18)
+
+Docs: https://www.odoo.com/documentation/18.0/developer/reference/backend/orm.html — https://www.odoo.com/documentation/18.0/developer/reference/backend/module.html
+
+## Model types
+- `models.Model` persistent; `models.TransientModel` wizards (auto-vacuumed, `_transient_max_hours`); `models.AbstractModel` mixins/services (no table).
+- Attributes: `_name`, `_description` (required), `_inherit`, `_inherits` (delegation), `_order`, `_rec_name`, `_table`, `_auto`, `_check_company_auto = True`, `_parent_name`/`_parent_store` (hierarchies with `parent_path`), `_active_name`.
+- Inheritance: classical `_inherit='x'` (no `_name`) extends in place; `_inherit='x'` + new `_name` copies; `_inherit=['a','b']` mixin; `_inherits={'res.partner':'partner_id'}` delegation.
+
+## Fields
+`Char, Text, Html, Integer, Float, Monetary, Boolean, Date, Datetime, Selection, Binary, Image, Json, Properties, PropertiesDefinition, Many2one, One2many, Many2many, Many2oneReference, Reference`, plus `Id`.
+
+Common attrs: `string, required, readonly, index, default, copy, store, groups, help, company_dependent, tracking, translate`.
+- Relational: `comodel_name, domain, context, ondelete` (`'restrict'|'cascade'|'set null'`; set explicitly on required M2O), `check_company=True`, `auto_join` (use sparingly), `bypass_search_access` (verify availability in 18.0 orm.html). One2many needs `inverse_name`; M2M `relation, column1, column2` only when defaults collide.
+- Computed: `compute='_compute_x', store, readonly, precompute=True` (stored computes needed on create, e.g. defaults depending on other vals), `compute_sudo` (default True for stored), `search=`, `inverse=`.
+- `Monetary` needs `currency_field` (default `currency_id`); `Float` needs `digits` (precision name like `'Product Price'` or tuple).
+- `Selection`: list of tuples; extend with `selection_add=[('x','X')]` plus `ondelete={'x': 'set default'}`.
+- `Html`: `sanitize=True` default, use `sanitize_overridable`/`sanitize_style` deliberately; `translate=html_translate` for translated HTML.
+- Indexes: `index=True` or `'btree'`, `'btree_not_null'` (skip NULLs, good for sparse M2O), `'trigram'` (fast `ilike '%x%'`, needs `pg_trgm`). (verify variants in 18.0: orm.html)
+- `company_dependent`: value stored per company (jsonb column); not searchable across companies cheaply; avoid on large hot tables. v18 changed storage to a single jsonb column on the model table (the `ir.property` model is gone; verify).
+
+## Constraints and indexes
+- Python: `@api.constrains('a','b')` raising `ValidationError`.
+- SQL: `_sql_constraints = [('name_uniq', 'unique(name, company_id)', 'Name must be unique per company')]` — list of `(name, sql_definition, message)` tuples; this is the current pattern in 18 (constraint is named `<table>_<name>` in PostgreSQL). Odoo 19 replaces it with declarative `models.Constraint`/`Index`/`UniqueIndex`; do not use those on 18.
+- Composite or partial indexes: create in `init()` with `odoo.tools.sql.create_index(self._cr, 'x_model_a_b_idx', self._table, ['a', 'b'])` (verify the helper signature in the 18.0 source), or use `index=True` on single columns.
+- `@api.ondelete(at_uninstall=False)` for delete guards.
+
+## Defaults, states, workflow
+- Status as `Selection` with `default`, `tracking=True`, `copy=False`; transitions in `action_*` methods that `ensure_one()` and validate current state. No `states=` field attribute (removed in 17; use view `readonly`/`invisible` expressions and Python checks).
+- Sequences: `ir.sequence` with `next_by_code`, assign in `create` (multi, loop vals) not in default.
+
+## Mixins
+`mail.thread` (chatter, `tracking=True`, `message_post`, `_track_subtype`), `mail.activity.mixin`, `mail.alias.mixin`, `portal.mixin` (`access_url`), `utm.mixin`, `rating.mixin`, `image.mixin`, `avatar.mixin`, `format.address.mixin`. Docs: https://www.odoo.com/documentation/18.0/developer/reference/backend/mixins.html
+
+## Module layout
+```
+my_module/
+  __init__.py            # from . import models, controllers, wizard
+  __manifest__.py
+  models/ controllers/ wizard/ report/ views/ security/ data/ demo/
+  static/src/{js,xml,scss}  static/description/icon.png
+  i18n/*.po  tests/  migrations/18.0.1.0.1/{pre,post}-*.py
+```
+Manifest keys: `name, version ('18.0.x.y.z'), summary, category, author, website, license ('LGPL-3'|'OEEL-1'), depends, data, demo, assets, application, installable, auto_install, external_dependencies, pre_init_hook, post_init_hook (takes env), uninstall_hook`. `data` order matters: security (groups, then `ir.model.access.csv`), then views, then actions/menus, then data. Files referencing groups/actions must load after them.
+
+## Data files
+- `<record id= model=>` with `<field name= ref=/eval=>`; `noupdate="1"` on seed user-editable data; `<function>` sparingly; `<menuitem>` shorthand; CSV for simple data/ACL.
+- Prefer `ir.model.access.csv` columns: `id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink`. `model_id:id` = `model_<model_name_with_underscores>`.
+- Never hard-code database ids; use `env.ref` and XML ids.
+
+## Reports
+QWeb PDF actions: `ir.actions.report` (`model, report_type='qweb-pdf', report_name, report_file`), template `t-call="web.external_layout"`, `t-foreach="docs"`; parsers `_get_report_values` on `report.<module>.<name>`. Docs: https://www.odoo.com/documentation/18.0/developer/reference/backend/reports.html
+
+## Controllers (brief)
+`@http.route('/path', type='http'|'json', auth='user'|'public'|'none', methods, website, csrf)`. On 18 `type='json'` is the safe spelling for JSON-RPC routes; the newer name `'jsonrpc'` (with `'json'` kept as alias) should only be adopted after checking the 18.0 docs. (verify in 18.0 docs: https://www.odoo.com/documentation/18.0/developer/reference/backend/http.html)
+
+## Style
+Odoo coding guidelines: https://www.odoo.com/documentation/18.0/contributing/development/coding_guidelines.html — member order: private attrs, defaults, fields, SQL constraints, compute/inverse/search, selection, constrains/onchange, CRUD overrides, actions, business methods.
