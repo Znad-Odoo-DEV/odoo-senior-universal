@@ -1,0 +1,13 @@
+---
+description: Odoo functional / techno-functional / implementation and app configuration
+alwaysApply: false
+---
+
+For requirements analysis, configuration, fit-gap, app setup, and implementation methodology, use the functional playbooks for the target version:
+
+- `@knowledge/odoo-<version>/techno-functional/SKILL.md` — requirements → Odoo, configure-vs-customize, module selection, fit-gap, functional specs, Studio-vs-code.
+- `@knowledge/odoo-<version>/functional/SKILL.md` — business processes, configuration, users/access, automation, analytics.
+- `@knowledge/odoo-<version>/implementer/SKILL.md` — methodology, environments, data migration, UAT/training, go-live.
+- App-specific playbooks: `accounting`, `inventory`, `sales-crm`, `purchase`, `manufacturing`, `hr-payroll`, `project`, `website-ecommerce`, `pos`, `studio`, `elearning`, `field-service`, `subscriptions`, `localization`.
+
+Principles: prefer configuration over customization; respect edition (Community/Enterprise) and hosting; never promise a feature the target version lacks — verify against `https://www.odoo.com/documentation/<version>/` and flag compliance (accounting/payroll/tax) decisions for an expert.
