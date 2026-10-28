@@ -1,11 +1,11 @@
 # Valuation and accounting link
 
-Docs (confirmed): cheat sheet https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/inventory/inventory_valuation/cheat_sheet.html ; operations valuation https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/inventory/inventory_valuation/operations_valuation.html ; landed costs https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/inventory/inventory_valuation/landed_costs.html ; by lots https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/inventory/inventory_valuation/valuation_by_lots.html ; scrap https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/inventory/inventory_valuation/scrapped_inventory_valuation.html
+Docs (confirmed): cheat sheet https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/inventory.html ; operations valuation https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/inventory.html ; landed costs https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/inventory.html ; by lots https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/inventory.html ; scrap https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/inventory.html
 
 ## Confirmed (cheat sheet)
 - Costing methods (Costing Method on the product category): Standard Price (fixed, manually updated), Average Cost (AVCO, weighted average), FIFO. LIFO/FEFO are removal strategies only.
 - Valuation modes (Inventory Valuation on the product category): Manual = periodic (bills to expense, stock accounts adjusted by entries at closing; common in Europe) vs Automated = perpetual (stock moves post journal entries, bills to stock/interim, COGS on sale; Anglo-Saxon accounting setting in Accounting settings).
-- Category fields: Stock Valuation Account, Stock Input/Output (interim received/delivered) Accounts, Stock Journal, plus Expense/COGS and Income accounts. The Inventory Adjustment (loss) account sits on the Inventory loss location. Exact labels: (verify in 18.0 docs: https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/inventory/inventory_valuation/cheat_sheet.html).
+- Category fields: Stock Valuation Account, Stock Input/Output (interim received/delivered) Accounts, Stock Journal, plus Expense/COGS and Income accounts. The Inventory Adjustment (loss) account sits on the Inventory loss location. Exact labels: (verify in 18.0 docs: https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/inventory.html).
 
 ## Decisions
 1. Costing method per category before first move: Standard for stable cost with variance analysis; Average for simple trading; FIFO when actual cost or per-lot cost matters.
