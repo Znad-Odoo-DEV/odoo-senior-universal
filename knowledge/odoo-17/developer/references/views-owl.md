@@ -94,4 +94,4 @@ QUnit.module("my_module", () => {
 });
 ```
 Helpers live in `@web/../tests/helpers/*` and `@web/../tests/views/helpers` (`makeView`, `setupViewRegistries`). (verify names in your 17.0 source)
-Tours go in the `web_tour.tours` registry (`{test: true, url: "/web", steps: () => [...]}`) and run from Python via `self.start_tour(url, name, login=)`. Docs: https://www.odoo.com/documentation/17.0/developer/reference/frontend/unit_testing.html (verify path in 17.0).
+Tours go in the `web_tour.tours` registry (`{test: true, url: "/web", steps: () => [...]}`) and run from Python via `self.start_tour(url, name, login=)`. Docs: https://www.odoo.com/documentation/17.0/developer/reference/frontend.html (verify path in 17.0).
