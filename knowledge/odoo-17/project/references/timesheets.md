@@ -1,6 +1,6 @@
 # Timesheets (Odoo 17)
 
-Sources (19.0 layout, version swapped; verify paths in 17.0): https://www.odoo.com/documentation/17.0/applications/services/timesheets.html ; https://www.odoo.com/documentation/17.0/applications/services/timesheets/billing_rates.html ; https://www.odoo.com/documentation/17.0/applications/services/timesheets/time_off.html ; https://www.odoo.com/documentation/17.0/applications/sales/sales/invoicing/time_materials.html
+Sources (19.0 layout, version swapped; verify paths in 17.0): https://www.odoo.com/documentation/17.0/applications/services/timesheets.html ; https://www.odoo.com/documentation/17.0/applications/services/timesheets.html ; https://www.odoo.com/documentation/17.0/applications/services/timesheets.html ; https://www.odoo.com/documentation/17.0/applications/sales/sales/invoicing/time_materials.html
 
 ## Configuration
 - Users must be employees (https://www.odoo.com/documentation/17.0/applications/hr/employees/new_employee.html).
