@@ -9,7 +9,7 @@ Sources (confirmed): https://www.odoo.com/documentation/18.0/applications/servic
 - Top bar sliders button: choose records shown (timesheets, SOs, invoices, documents, dashboard); custom buttons via Save View (+ Shared).
 
 ## Project templates
-- Availability caveat: Convert to Template, the Project Templates menu and Project Roles are documented for the newer release; confirm they exist on 18 before advising (verify in 18.0 docs: https://www.odoo.com/documentation/18.0/applications/services/project/project_management/project_templates.html). Fallback on 18: duplicate a project (keep a clean source project) or use the service product's Project Template field (verify) so a sale copies a project.
+- Availability caveat: Convert to Template, the Project Templates menu and Project Roles are documented for the newer release; confirm they exist on 18 before advising (verify in 18.0 docs: https://www.odoo.com/documentation/18.0/applications/services/project/project_management.html). Fallback on 18: duplicate a project (keep a clean source project) or use the service product's Project Template field (verify) so a sale copies a project.
 - Convert an existing project: Settings > cog > Convert to Template. Copies stages, tasks, subtasks and settings; ARCHIVES the original (duplicate first). Planned dates are not saved on conversion; set them on the template afterwards.
 - Use: Projects > New > Project Templates > click template; set name, Customer, Planned Date, task email; Create Project.
 - Project Roles on template tasks: assign people per role at creation; matching tasks go to them.
