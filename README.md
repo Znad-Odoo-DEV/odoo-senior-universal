@@ -1,6 +1,6 @@
 # odoo-senior-universal
 
-Senior **Odoo** expertise (versions **17.0, 18.0, 19.0** + upgrade guides) packaged as **AI-agnostic knowledge** with ready-made adapters. Use it with Cursor, GitHub Copilot, Windsurf, ChatGPT or any system-prompt, or any coding agent — not just one vendor.
+Senior **Odoo** expertise (versions **17.0, 18.0, 19.0, 20.0** + upgrade guides) packaged as **AI-agnostic knowledge** with ready-made adapters. Use it with Cursor, GitHub Copilot, Windsurf, ChatGPT or any system-prompt, or any coding agent — not just one vendor.
 
 It turns any capable assistant into a senior Odoo developer and techno-functional consultant that is **version-aware**, grounds answers in the official docs, and never invents APIs.
 
@@ -12,10 +12,11 @@ AGENTS.md                     # agent-agnostic brief (Windsurf, Cline, Aider, �
 .github/copilot-instructions.md   # GitHub Copilot (auto-loaded for this repo)
 .cursor/rules/*.mdc           # Cursor project rules (persona + per-topic)
 knowledge/                    # the senior playbooks, by version and topic
-  odoo-19/<topic>/SKILL.md (+ references/)
+  odoo-20/<topic>/SKILL.md (+ references/)
+  odoo-19/<topic>/...
   odoo-18/<topic>/...
   odoo-17/<topic>/...
-  upgrades/upgrade-17-to-18/ , upgrade-18-to-19/
+  upgrades/upgrade-17-to-18/ , upgrade-18-to-19/ , upgrade-19-to-20/
 ```
 
 Topics (per version): `developer`, `techno-functional`, `functional`, `implementer`, `ai-companion`, `accounting`, `inventory`, `sales-crm`, `purchase`, `manufacturing`, `hr-payroll`, `project`, `website-ecommerce`, `pos`, `studio`, `elearning`, `field-service`, `subscriptions`, `localization`.
@@ -43,19 +44,26 @@ Point the agent at `SYSTEM_PROMPT.md` for the persona and at `knowledge/` for ve
 
 Odoo changes across majors; this pack keeps the versions separate so answers stay correct. Quick API map:
 
-| Area | Odoo 17 | Odoo 18 | Odoo 19 |
-|---|---|---|---|
-| List view root | `<tree>` | `<list>` | `<list>` |
-| Chatter | `<div class="oe_chatter">` | `<chatter/>` | `<chatter/>` |
-| Access API | `check_access_rights`/`_rule` | `check_access`/`has_access` | `check_access`/`has_access` |
-| Security field | `groups_id` | `groups_id` | `group_ids` (+ `res.groups.privilege`) |
-| SQL constraints | `_sql_constraints` | `_sql_constraints` | declarative `models.Constraint`/`Index` |
-| Translations | `_()` / `_lt()` | `self.env._()` | `self.env._()` |
-| JS tests / public JS | QUnit / `publicWidget` | Hoot / `Interaction` | Hoot / `Interaction` |
-| External API | XML-RPC / JSON-RPC | XML-RPC / JSON-RPC | `/json/2/<model>/<method>` |
-| Built-in AI app | — | — | yes |
+| Area | Odoo 17 | Odoo 18 | Odoo 19 | Odoo 20 |
+|---|---|---|---|---|
+| List view root | `<tree>` | `<list>` | `<list>` | `<list>` |
+| Chatter | `<div class="oe_chatter">` | `<chatter/>` | `<chatter/>` | `<chatter/>` |
+| Access API | `check_access_rights`/`_rule` | `check_access`/`has_access` | `check_access`/`has_access` | `check_access`/`has_access` (`_check_access` deprecated) |
+| Security files | `ir.model.access.csv` + `ir.rule` | `ir.model.access.csv` + `ir.rule` | `ir.model.access.csv` + `ir.rule` | **`ir.access.csv`** (ACLs + record rules merged into `ir.access`) |
+| Security field | `groups_id` | `groups_id` | `group_ids` (+ `res.groups.privilege`) | `group_ids` (+ `res.groups.privilege`) |
+| SQL constraints | `_sql_constraints` | `_sql_constraints` | declarative `models.Constraint`/`Index` | declarative `models.Constraint`/`Index` |
+| Grouping API | `_read_group` | `_read_group` | `_read_group` | public `read_group(domain, groupby, aggregates, having, offset, limit, order)`; `_table_query` removed |
+| Translations | `_()` / `_lt()` | `self.env._()` | `self.env._()` | `self.env._()` |
+| Frontend framework | Owl 2 | Owl 2 | Owl 2 | **OWL 3** (22 breaking changes; compat layer temporary) |
+| JS tests / public JS | QUnit / `publicWidget` | Hoot / `Interaction` | Hoot / `Interaction` | Hoot / `Interaction` |
+| External API | XML-RPC / JSON-RPC | XML-RPC / JSON-RPC | `/json/2/<model>/<method>` | JSON-2 `/json/2/…`; XML-RPC/JSON-RPC deprecated, `db` service removed |
+| Python / PostgreSQL | 3.10+ | 3.10+ | 3.10+ / PG 13+ | **3.12+ / PG 16+** |
+| Field Service app | yes | yes | yes | discontinued → Planning |
+| Built-in AI app | — | — | yes | yes |
 
 Always confirm edition (Community/Enterprise) and hosting (Online / Odoo.sh / on-premise) too.
+
+**Support status:** standard support ends **19.0 → Sept 2028**, **18.0 → Sept 2027**; **17.0 ended Sept 2026**. Enterprise databases older than the 3 latest majors can be billed +25% (no earlier than 6 months after a new major). Odoo 20 also removes/merges several modules (`base_vat`, `base_iban`, `stock_picking_batch` → `stock`, `website_sale_wishlist`/`_comparison` → `website_sale`, `hr_org_chart`, `hr_homeworking`, `delivery_mondialrelay`, …) — see `knowledge/upgrades/upgrade-19-to-20/`.
 
 ## Scope & accuracy
 
