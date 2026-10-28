@@ -1,11 +1,11 @@
 # Custom-code migration 19.0 -> 20.0
 
-What to change in custom modules so they load and behave on 20.0. Primary source: ORM changelog https://www.odoo.com/documentation/20.0/developer/reference/backend/orm/changelog.html and the 20.0 developer reference. The facts below are verified; items marked (verify in 20.0 docs) are details to confirm on the live page. This jump is heavier than 17->18 or 18->19: security, frontend framework and the grouping API all change.
+What to change in custom modules so they load and behave on 20.0. Primary source: ORM changelog https://www.odoo.com/documentation/20.0/developer/reference/backend/orm/changelog.html and the 20.0 developer reference. Confirmed in the 20.0 docs: `ir.access` fields and semantics, `_table_query` removal, Python 3.12 / PostgreSQL 16, the external API deprecations and JSON-2. Not in the 20.0 ORM changelog (unverified): `read_group` signature, `_check_access` deprecation, tracking-values removal. Items marked (verify in 20.0 docs) are details to confirm on the live page. This jump is heavier than 17->18 or 18->19: security, frontend framework and the grouping API all change.
 
 ## 1. Security model — mandatory rewrite (highest impact)
 - `ir.model.access` and `ir.rule` are **merged into `ir.access`**. The file `ir.model.access.csv` is **replaced by `ir.access.csv`** with columns:
   `id,name,model_id,group_id/id,operation,domain`
-  - one row per (model, group, operation); `operation` is the access kind (read / write / create / unlink — verify exact values in 20.0 docs);
+  - `operation` is a subsequence of the string "crud" (e.g. "r", "cd"), so one row can cover several operations; `group_id` empty = global rule applied to every user; group rules unify, global rules intersect (documented); the CSV filename and `model_id` cell format are not shown on the 20.0 page (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/developer/reference/backend/security.html);
   - `domain` carries the row-level restriction that a record rule used to express (empty = no restriction).
 - Consequences: every custom module's `security/` folder must be rewritten; XML `ir.rule` records become `ir.access` rows with a `domain`; code that queried `ir.model.access` / `ir.rule` must target `ir.access`.
 - `_check_access` is **deprecated** — use the public `check_access(operation)` / `has_access(operation)` / `_filtered_access(operation)` API.
@@ -13,7 +13,7 @@ What to change in custom modules so they load and behave on 20.0. Primary source
 
 ## 2. ORM
 - **`read_group` is public with a new signature**: `read_group(domain, groupby, aggregates, having=None, offset=0, limit=None, order=None)`. Old calls that pass `fields=` or `lazy=` **break** — rewrite them (aggregates as `'field:sum'`, `'__count'`). `_read_group` remains the tuple-returning core.
-- **`_table_query` is removed** — SQL-backed/virtual models must be reimplemented (for example as a regular model fed by a stored computation, or a view model defined through the supported mechanism — verify the recommended replacement in 20.0 docs).
+- **`_table_query` is removed** — SQL-backed/virtual models must be reimplemented (confirmed removed in the 20.0 ORM changelog, which names no replacement; for example a regular model fed by a stored computation — verify the recommended replacement in 20.0 docs).
 - **Tracking values are removed**: `mail.tracking.value` is no longer written; tracking messages are generated on the fly. Code or reports that read stored tracking values must switch to the message history. (verify in 20.0 docs)
 - Still valid from 19: `Domain` class, declarative `models.Constraint/Index/UniqueIndex`, `group_ids` + `res.groups.privilege`, `search_fetch`/`fetch`, `_read_group`, `@api.model_create_multi`, `odoo.tools.SQL`.
 
@@ -28,7 +28,7 @@ What to change in custom modules so they load and behave on 20.0. Primary source
 
 ## 5. External API / integrations
 - XML-RPC and JSON-RPC are **deprecated**; the **`db` service is removed in 20**; `common` and `object` are scheduled for removal in **Odoo 22 (fall 2028)**.
-- Replacement: **JSON-2** `/json/2/<model>/<method>` (available on the Custom plan only). Plan the move for every external caller now; keep `common`/`object` working only as a dated transition.
+- Replacement: **JSON-2** `/json/2/<model>/<method>` (new in 19.0; bearer API key; not available on One App Free or Standard plans). Confirmed: https://www.odoo.com/documentation/20.0/developer/reference/external_api.html Plan the move for every external caller now; keep `common`/`object` working only as a dated transition.
 
 ## 6. Runtime
 - **Python >= 3.12**, **PostgreSQL >= 16**. Re-check pinned Python deps for 3.12 compatibility; re-check any raw SQL for PostgreSQL 16.
