@@ -18,7 +18,7 @@
 - Landscape (general; verify per country): (a) generic structured formats (UBL/CII/Peppol-type) via shared account modules (in 17 these build on the account EDI framework, enabled per journal; verify in 17.0 docs: the country page); (b) country mandates with government portals, certificates or clearance; (c) none required.
 - Typical components: format generation, partner identifiers, company/journal configuration, credentials or certificates, send/status flow, error handling.
 - Treat as a workstream: legal requirement, sandbox credentials, test invoices, go-live date, rollback plan.
-- Pages to read, not assume: https://www.odoo.com/documentation/17.0/applications/finance/fiscal_localizations/<country>.html for germany, belgium, india, argentina, united_states.
+- Pages to read, not assume: https://www.odoo.com/documentation/17.0/applications/finance/fiscal_localizations.html>.html for germany, belgium, india, argentina, united_states.
 - Which e-invoicing format/module applies and how it is configured: (verify in 17.0 docs: the country page).
 - Module availability can differ between Community and Enterprise; confirm before scoping.
 
