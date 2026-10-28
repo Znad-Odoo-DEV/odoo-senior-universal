@@ -4,7 +4,7 @@ One step: https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp
 Two step: https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/manufacturing/basic_setup/two_step_manufacturing.html
 Three step: https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/manufacturing/basic_setup/three_step_manufacturing.html
 Costs: https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/manufacturing/basic_setup/mo_costs.html
-WIP: https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/manufacturing/basic_setup/work_in_progress.html
+WIP: https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/manufacturing/basic_setup.html
 Backorders: https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/manufacturing/workflows/manufacturing_backorders.html
 Scrap: https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/manufacturing/workflows/scrap_manufacturing.html
 Unbuild: https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/manufacturing/workflows/unbuild_orders.html
