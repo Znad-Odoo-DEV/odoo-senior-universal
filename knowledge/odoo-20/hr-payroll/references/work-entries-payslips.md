@@ -1,13 +1,15 @@
 # Payslips, pay runs, accounting without work entries (Odoo 20 Payroll)
 
-> Provenance: Odoo 20 REMOVES payroll work entries (ground truth for this pack). The 20.0 pages could not be fetched, so everything about the replacement mechanism is marked "(verify in 20.0 docs)". Items marked "confirmed on 19.0" were read from the 19.0 docs. URLs are ported from the 19.0 layout.
+> Provenance: Odoo 20 removes payroll work entries — confirmed by the 20 release notes (https://www.odoo.com/odoo-20-release-notes): "Work entries and the Planning-Payroll integration have been removed. Work entry types and time off types have been merged." The 20.0 payroll doc pages had not been rewritten when checked (they still show the 19 work-entries UI), so replacement mechanics are marked "(verify in 20.0 docs)". Items marked "confirmed on 19.0" were read from the 19.0 docs.
 
 Docs (same folder .../applications/hr/payroll/, ported from the 19.0 layout; verify in 20.0 docs): payslips.html, pay_runs.html. The 19.0 work_entries.html page documented the removed feature: expect it to be gone or rewritten in 20.0 (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/applications/hr/payroll.html).
 
 LOCALIZATION-DEPENDENT: how a country localization derives worked days, leave and overtime for its structures is country-specific. Never present one country's treatment as universal, and re-check each installed l10n_xx_hr_payroll module on 20.
 
 ## What was removed in 20
+- CONFIRMED (release notes): "Work entries and the Planning-Payroll integration have been removed. Work entry types and time off types have been merged." The 20.0 payroll.html / pay_runs.html pages still describe the 19 Work Entries dashboard — treat them as not yet updated for 20, not as evidence the feature survived. Source: https://www.odoo.com/odoo-20-release-notes
 - Payroll work entries are removed. Modules confirmed removed: `hr_work_entry_holidays`, `l10n_fr_hr_work_entry_holidays` (also `hr_org_chart` and `hr_homeworking` in the HR area). Whether the remaining technical `hr_work_entry*` modules still exist as dependencies is not confirmed here (verify in 20.0 docs / release notes: https://www.odoo.com/odoo-20-release-notes).
+- Also confirmed in the 20 release notes: contract dates can no longer be changed if that affects existing payslips; payslips can be sent on confirmation, on payment, or manually; a pay run can be tested in one click with printed payslips; the Salary Computation tab now shows only relevant information. Source: https://www.odoo.com/odoo-20-release-notes
 - Consequently, payslip generation must no longer assume any of the following 19 behaviors:
   - Work Entries dashboard (Payroll > Work Entries > Work Entries, Conflicting filter) and the orange-triangle conflict workflow.
   - Work entry types (attendance, sick leave, training, public holiday, custom) and the time off type -> work entry type mapping.
