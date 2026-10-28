@@ -23,7 +23,7 @@ Choose: no custom code and fast start -> Online. Custom modules or CI discipline
 - Distribution check (general OS knowledge, not from Odoo docs; confirm on your OS): Ubuntu 24.04 LTS ships Python 3.12 and PostgreSQL 16; older releases (for example Ubuntu 22.04 with Python 3.10 / PostgreSQL 14, or Debian 12 with Python 3.11 / PostgreSQL 15) need extra repositories, a newer interpreter, or a container image.
 - PostgreSQL major upgrades are not in-place package upgrades: use dump/restore or `pg_upgrade`, rehearse on a copy, and keep the old cluster until the cutover is accepted.
 - Pin the exact Python and PostgreSQL versions in the runbook, and use the same versions in dev, staging and production (rule 3 below).
-- Confirm the requirement list on the 20.0 pages before building images: https://www.odoo.com/documentation/20.0/administration/on_premise/source.html (verify in 20.0 docs).
+- Confirm the requirement list on the 20.0 pages before building images: https://www.odoo.com/documentation/20.0/administration/on_premise/source.html (confirmed in 20.0 docs: Python 3.12 or later, PostgreSQL 16.0 or above; the page also carries a stale note saying 3.10, the 3.12 figure is current).
 
 ## Third-party and OCA modules (ecosystem check)
 - As of 2026-09-24 OCA had **no 20.0 branches** (OpenUpgrade included). This is volatile: **re-check** the OCA repositories and each vendor's compatibility statement at kickoff and again at every phase gate.
