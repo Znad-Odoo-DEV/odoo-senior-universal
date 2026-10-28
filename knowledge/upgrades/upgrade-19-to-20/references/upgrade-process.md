@@ -1,6 +1,6 @@
 # Database upgrade process (19.0 -> 20.0)
 
-Odoo runs the conversion on its **upgrade platform**; you request it and validate the result. Confirm current steps at https://www.odoo.com/documentation/20.0/administration/upgrade.html — platform behavior changes over time.
+Odoo runs the conversion on its **upgrade platform**; you request it and validate the result. Steps below match https://www.odoo.com/documentation/20.0/administration/upgrade.html and https://www.odoo.com/documentation/20.0/developer/howtos/upgrade_custom_db.html (checked). Platform behavior changes over time.
 
 ## Prerequisites specific to 20.0
 - **Python >= 3.12** and **PostgreSQL >= 16** (19 required 3.10 / 13). Upgrade the runtime on on-premise servers before the production upgrade; on Odoo.sh pick a build that provides them; Odoo Online handles it.
@@ -14,12 +14,12 @@ Odoo runs the conversion on its **upgrade platform**; you request it and validat
 The uploaded copy excludes the filestore — **merge the production filestore** into the test database so attachments/images match production.
 
 ## By hosting
-- **Odoo Online**: upgrade from the database manager / Settings; no custom code, so you validate standard behavior and installed apps — especially the 20 process changes (Field Service -> Planning, payroll, accounting).
-- **Odoo.sh**: upgrade a **staging** branch first, validate, then merge to production.
+- **Odoo Online**: Odoo runs a silent test upgrade; if it takes under 20 minutes you can trigger the upgrade yourself; an automatic upgrade happens at the due date. Use the database manager; no custom code, so you validate standard behavior and installed apps — especially the 20 process changes (Field Service -> Planning, payroll, accounting).
+- **Odoo.sh**: the latest daily production backup is upgraded and placed on a staging branch; each commit pushed there restores the upgraded backup and updates custom modules (log: `~/logs/upgrade.log`). Validate, then request production.
 - **On-premise**: command line against the upgrade platform; you manage the server (Python 3.12+, PostgreSQL 16+), filestore and the custom-code deployment.
 
 ## Command line (on-premise / scripted)
-Same command both phases, only the keyword changes (verify the current invocation in the docs):
+Same command both phases, only the keyword changes (command syntax not shown in the pages checked: verify in 20.0 docs):
 
 ```
 python <(curl -s https://upgrade.odoo.com/upgrade) test -d <db-name> -t 20.0
@@ -43,4 +43,4 @@ Modules removed/merged in 20.0 block loading of anything that depends on them: `
 - No in-place downgrade. Rollback = restore the 19.0 backup + filestore (on the 19-era runtime). Keep that backup until 20.0 has run a full business cycle.
 
 ## Support window
-- Standard support ends: **19.0 Sept 2028**, **18.0 Sept 2027**, **17.0 Sept 2026** (ended). Enterprise: a database older than the 3 latest majors can be charged **+25%** (no earlier than 6 months after a new major). Details: https://www.odoo.com/documentation/20.0/administration/supported_versions.html (verify in 20.0 docs)
+- Standard support ends: **19.0 Sept 2028**, **18.0 Sept 2027**, **17.0 Sept 2026** (ended). Enterprise: a database older than the 3 latest majors can be charged **+25%** (no earlier than 6 months after a new major). Official rule: major-version databases must be upgraded about every two years; each major gets three years of support plus two more to complete the upgrade. Details: https://www.odoo.com/documentation/20.0/administration/supported_versions.html (verify in 20.0 docs)
