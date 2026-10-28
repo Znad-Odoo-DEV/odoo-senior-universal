@@ -4,7 +4,7 @@ Base: https://www.odoo.com/documentation/17.0/applications/sales/
 Index (verify path in 17.0 docs): sales/sales_quotations.html
 
 ## Lifecycle
-Quotation (draft) -> Quotation Sent -> Sales Order (confirmed) -> locked/done or cancelled. Confirmation triggers delivery (stock), invoice per policy, and task/project/subscription creation per product configuration. Exact state labels and lock behavior: (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/sales/sales/sales_quotations/create_quotations.html).
+Quotation (draft) -> Quotation Sent -> Sales Order (confirmed) -> locked/done or cancelled. Confirmation triggers delivery (stock), invoice per policy, and task/project/subscription creation per product configuration. Exact state labels and lock behavior: (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/sales/sales.html).
 
 ## Doc pages (sales/sales_quotations/...; verify paths in 17.0 docs)
 - create_quotations.html - build a quote
@@ -22,7 +22,7 @@ Quotation (draft) -> Quotation Sent -> Sales Order (confirmed) -> locked/done or
 ## Practice
 - Use quotation templates for repeatable offers; set default validity so stale quotes expire.
 - Optional products belong on the template or line, not as extra lines to delete later.
-- Online signature vs online payment: choose per customer segment; both confirm the order from the portal. Prepayment percentage option: (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html).
+- Online signature vs online payment: choose per customer segment; both confirm the order from the portal. Prepayment percentage option: (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/sales/sales.html).
 - Margins show only with the related setting/group; check access before promising it to reps.
 - Addresses: use partner child contacts of type Invoice/Delivery; set on the order, they flow to picking and invoice.
 - CRM link: quotations can be created from an opportunity (crm/acquire_leads/send_quotes.html), keeping the opportunity linked.
