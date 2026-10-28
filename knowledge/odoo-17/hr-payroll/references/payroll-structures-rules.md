@@ -1,6 +1,6 @@
 # Salary structures, rules, categories, inputs (Odoo 17 Payroll)
 
-Docs: https://www.odoo.com/documentation/17.0/applications/hr/payroll/salary_rules.html ; localizations: https://www.odoo.com/documentation/17.0/applications/hr/payroll/payroll_localizations.html
+Docs: https://www.odoo.com/documentation/17.0/applications/hr/payroll.html ; localizations: https://www.odoo.com/documentation/17.0/applications/hr/payroll.html
 LOCALIZATION-DEPENDENT: structures and rules come from the country module; do not assume universal rules.
 
 ## Model
@@ -28,8 +28,8 @@ LOCALIZATION-DEPENDENT: structures and rules come from the country module; do no
 
 ## Related docs
 - https://www.odoo.com/documentation/17.0/applications/hr/payroll/salary_attachments.html (salary adjustments)
-- https://www.odoo.com/documentation/17.0/applications/hr/payroll/salaries.html
-- https://www.odoo.com/documentation/17.0/applications/hr/payroll/commissions.html (verify these pages exist in 17.0)
+- https://www.odoo.com/documentation/17.0/applications/hr/payroll.html
+- https://www.odoo.com/documentation/17.0/applications/hr/payroll.html (verify these pages exist in 17.0)
 
 ## Senior notes
 - Clone a structure instead of editing shipped rules; keep customizations in a module with own xml ids to survive upgrades.
