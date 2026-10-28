@@ -21,4 +21,4 @@ Not covered on the reordering page. Working model: the Buy route makes purchasin
 ## Senior notes
 - No RFQ generated: Storable Product, Buy route on product/warehouse, vendor line, scheduler run, rule location/warehouse match.
 - Overstock after replenishment usually = Multiple Quantity or vendor min_qty exceeding Max.
-- Demand-based quantity suggestions (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/inventory_and_mrp/purchase/advanced/suggest.html)
+- Demand-based quantity suggestions (verify in 17.0 docs: https://www.odoo.com/documentation/17.0/applications/inventory_and_mrp/purchase/advanced.html)
