@@ -1,9 +1,9 @@
 # Website builder, pages, themes, menus, multi-website
 
 Odoo 17.0 docs sections (website.html): website_creation, web_design, structure, configuration, reporting, mail_groups (sub-page paths ported from the newer-version doc set; verify each resolves in 17.0)
-- https://www.odoo.com/documentation/17.0/applications/websites/website/website_creation.html
+- https://www.odoo.com/documentation/17.0/applications/websites/website.html
 - https://www.odoo.com/documentation/17.0/applications/websites/website/web_design.html
-- https://www.odoo.com/documentation/17.0/applications/websites/website/structure.html
+- https://www.odoo.com/documentation/17.0/applications/websites/website.html
 - https://www.odoo.com/documentation/17.0/applications/websites/website/configuration.html
 - https://www.odoo.com/documentation/17.0/applications/websites/website/reporting.html
 - https://www.odoo.com/documentation/17.0/applications/websites/website/mail_groups.html
