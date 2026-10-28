@@ -1,13 +1,13 @@
 # eCommerce catalog: products, variants, categories, pricelists
 
 Confirmed 18.0 docs:
-- https://www.odoo.com/documentation/18.0/applications/websites/ecommerce/configuration.html
-- https://www.odoo.com/documentation/18.0/applications/websites/ecommerce/configuration/products.html
-- https://www.odoo.com/documentation/18.0/applications/websites/ecommerce/configuration/categories_variants.html
-- https://www.odoo.com/documentation/18.0/applications/websites/ecommerce/configuration/prices.html
-- https://www.odoo.com/documentation/18.0/applications/websites/ecommerce/configuration/customer_accounts.html
-- https://www.odoo.com/documentation/18.0/applications/websites/ecommerce/configuration/b2b_b2c.html
-- Design: https://www.odoo.com/documentation/18.0/applications/websites/ecommerce/ecommerce_design.html (product_page.html, catalog.html, additional_features.html under it)
+- https://www.odoo.com/documentation/18.0/applications/websites/ecommerce.html
+- https://www.odoo.com/documentation/18.0/applications/websites/ecommerce.html
+- https://www.odoo.com/documentation/18.0/applications/websites/ecommerce.html
+- https://www.odoo.com/documentation/18.0/applications/websites/ecommerce.html
+- https://www.odoo.com/documentation/18.0/applications/websites/ecommerce.html
+- https://www.odoo.com/documentation/18.0/applications/websites/ecommerce.html
+- Design: https://www.odoo.com/documentation/18.0/applications/websites/ecommerce.html (product_page.html, catalog.html, additional_features.html under it)
 
 ## Products
 - Publish a product with the Go to Website smart button / Published toggle; set Website field to restrict to one site.
