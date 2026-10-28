@@ -20,7 +20,7 @@ _URLs follow the 19.0 layout (20.0 pages could not be fetched when this was adap
 - Landscape (general; verify per country): (a) generic structured formats (UBL/Peppol-type) via shared account modules; (b) country mandates with government portals, certificates or clearance; (c) none required.
 - Typical components: format generation, partner identifiers, company/journal configuration, credentials or certificates, send/status flow, error handling.
 - Treat as a workstream: legal requirement, sandbox credentials, test invoices, go-live date, rollback plan.
-- Pages to read, not assume: https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/<country>.html for germany, belgium, india, argentina, united_states (ported from the 19.0 layout).
+- Pages to read, not assume: https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations.html>.html for germany, belgium, india, argentina, united_states (ported from the 19.0 layout).
 - Which e-invoicing format/module applies and how it is configured: (verify in 20.0 docs: the country page).
 - Module availability can differ between Community and Enterprise; confirm before scoping.
 - Partner identifiers used by e-invoicing (VAT, company registry, endpoint IDs) depend on clean tax-ID data; with `base_vat` and `base_iban` removed in 20, re-test identifier and bank-account validation before sending the first e-invoice.
