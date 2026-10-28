@@ -1,6 +1,6 @@
 # Restaurant features
 
-Sources (confirmed): https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/restaurant.html ; https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/restaurant/urban_piper.html ; https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/restaurant/APAC_food_delivery.html ; https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/extra/preparation.html
+Sources (confirmed): https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/restaurant.html ; https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/restaurant.html ; https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/restaurant.html ; https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html
 
 ## Setup
 - Enable Is a Bar/Restaurant (Point of Sale section of settings); restaurant settings depend on it.
@@ -16,13 +16,13 @@ Sources (confirmed): https://www.odoo.com/documentation/18.0/applications/sales/
 
 ## Order flow (page sections)
 - Order management: order process, order transfer (move between tables), courses (courses are newer-release: verify on 18).
-- Order printing: kitchen/bar tickets, or Preparation display (https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/extra/preparation.html). Per-category printer setup: (verify in 18.0 docs: https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/restaurant.html).
+- Order printing: kitchen/bar tickets, or Preparation display (https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html). Per-category printer setup: (verify in 18.0 docs: https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/restaurant.html).
 - Bills and payment: bill splitting, order payment, receipt printing.
 - Tips: tip with payment; Tip after payment is US only.
 
 ## Delivery and ordering
-- UrbanPiper (availability on 18: verify): https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/restaurant/urban_piper.html ; APAC delivery: https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/restaurant/APAC_food_delivery.html ; needs Delivery Payment methods.
-- Self-ordering and presets (dine-in/takeaway): https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/extra/self_order.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/extra/presets.html
+- UrbanPiper (availability on 18: verify): https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/restaurant.html ; APAC delivery: https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/restaurant.html ; needs Delivery Payment methods.
+- Self-ordering and presets (dine-in/takeaway): https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html, https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html
 
 ## Pitfalls
 - Restaurant PoS cannot close with open unscheduled draft orders (Review Orders / Cancel Orders popover).
