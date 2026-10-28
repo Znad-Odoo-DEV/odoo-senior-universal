@@ -12,7 +12,7 @@ Doc URLs (ported from the 19.0 layout; verify in 20.0 docs):
 ## Wishlist and comparison (Odoo 20)
 - `website_sale_wishlist` and `website_sale_comparison` are merged into `website_sale`. Both are core eCommerce features: nothing to install, and installing `website_sale` is enough.
 - Wishlist: "Add to Wishlist" on product cards/pages and on the checkout Order summary step. Comparison: compare products by attribute; attribute categories (Attributes configuration) group the rows of the comparison view.
-- Whether a Settings toggle still enables/disables each feature, and where it sits: (verify in 20.0 docs: https://www.odoo.com/documentation/20.0/applications/websites/ecommerce/ecommerce_design/additional_features.html).
+- Confirmed in 20.0 docs (https://www.odoo.com/documentation/20.0/applications/websites/ecommerce/ecommerce_design/additional_features.html): wishlist and comparison are toggled in the website editor (Style tab: Products Details and Product Design > Actions), not in Settings; comparison is limited to four products.
 - Custom code: change `depends` from the old module names to `website_sale`; inherited templates and controllers keep working only if the external IDs they extend still exist in 20 (re-test; verify in 20.0 docs).
 - Upgrade: check wishlist records and website-specific (COW) copies of wishlist/comparison templates on an upgraded copy before go-live.
 
