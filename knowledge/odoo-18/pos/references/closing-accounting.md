@@ -1,6 +1,6 @@
 # Closing and accounting link
 
-Sources (confirmed): https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/use.html ; https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/use/receipts.html ; https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/use/pos_invoices.html ; https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/reporting.html
+Sources (confirmed): https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html ; https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html ; https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html ; https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/reporting.html
 
 ## Closing
 1. Hamburger menu > Close Register. Closing Register popover: order count, total sales, expected amount per payment method.
@@ -11,10 +11,10 @@ Sources (confirmed): https://www.odoo.com/documentation/18.0/applications/sales/
 - Close at the end of each day.
 
 ## Accounting link
-- Closing posts the session journal entries: sales, taxes, payment-method receivable/outstanding accounts, cash difference (exact account structure: verify in 18.0 docs: https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/use.html).
+- Closing posts the session journal entries: sales, taxes, payment-method receivable/outstanding accounts, cash difference (exact account structure: verify in 18.0 docs: https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html).
 - Cash method: cash journal; card: bank journal with outstanding/intermediary account, reconciled later with the statement.
 - Intermediary Account on payment method: empty = company default receivable.
-- Invoiced orders (customer requests Invoice) post the invoice immediately: https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/use/pos_invoices.html. Offline invoice requests generate after reconnect.
+- Invoiced orders (customer requests Invoice) post the invoice immediately: https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html. Offline invoice requests generate after reconnect.
 - Refunds: validated return creates a credit note referencing the original receipt/invoice.
 
 ## Inventory link
@@ -22,7 +22,7 @@ Sources (confirmed): https://www.odoo.com/documentation/18.0/applications/sales/
 - Handle lots/serials and negative stock before sale; check the picking type per config.
 
 ## Receipts and reporting
-- Receipts: https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/use/receipts.html ; Reporting: https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/reporting.html
+- Receipts: https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale.html ; Reporting: https://www.odoo.com/documentation/18.0/applications/sales/point_of_sale/reporting.html
 
 ## Pitfalls
 - A locked fiscal period before closing blocks the entry; close sessions before period lock.
