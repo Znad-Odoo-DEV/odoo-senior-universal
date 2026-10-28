@@ -1,7 +1,7 @@
 # Planning: MPS, Scheduling, Replenishment (Odoo 17)
 
 MPS: https://www.odoo.com/documentation/17.0/applications/inventory_and_mrp/manufacturing/workflows/use_mps.html
-Delayed analytics: https://www.odoo.com/documentation/17.0/applications/inventory_and_mrp/manufacturing/reporting/delayed.html
+Delayed analytics: https://www.odoo.com/documentation/17.0/applications/inventory_and_mrp/manufacturing/reporting.html
 Allocation analytics: https://www.odoo.com/documentation/17.0/applications/inventory_and_mrp/manufacturing/reporting/allocation.html
 Production analytics: https://www.odoo.com/documentation/17.0/applications/inventory_and_mrp/manufacturing/reporting/production_analysis.html
 
