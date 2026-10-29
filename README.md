@@ -25,7 +25,7 @@ Each topic has a concise `SKILL.md` playbook plus deeper `references/*.md`, grou
 
 ## Install
 
-One-liner (Ubuntu / macOS, needs only git):
+One-liner (Ubuntu / macOS / Windows via Git Bash or WSL — needs only git):
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Znad-Odoo-DEV/odoo-senior-universal/main/install.sh | bash -s -- --tool cursor --version 19 --target .
