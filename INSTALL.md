@@ -1,6 +1,6 @@
-# Install from the terminal (Ubuntu / macOS)
+# Install from the terminal (Ubuntu / macOS / Windows)
 
-Everything here is copy-paste ready and works the same on Ubuntu and macOS unless a difference is noted. Replace `<project>` with the folder of the project you want the Odoo skills in.
+Everything here is copy-paste ready and works the same on Ubuntu, macOS and Windows (in Git Bash or WSL) unless a difference is noted. Replace `<project>` with the folder of the project you want the Odoo skills in.
 
 ## Prerequisites
 
@@ -17,6 +17,15 @@ xcode-select --install
 brew install git
 ```
 
+Windows — pick one:
+- **Git Bash** (recommended; bundled with Git for Windows). Install Git, then run every command on this page inside Git Bash:
+```powershell
+winget install --id Git.Git -e
+```
+- **WSL** (Ubuntu inside Windows): run `wsl --install` once, then follow the Ubuntu steps.
+
+PowerShell on its own cannot run `install.sh` (it is a bash script) — use Git Bash or WSL for it.
+
 Nothing else is needed for this pack.
 
 ## One-liner (no manual clone)
@@ -25,7 +34,7 @@ Nothing else is needed for this pack.
 curl -fsSL https://raw.githubusercontent.com/Znad-Odoo-DEV/odoo-senior-universal/main/install.sh | bash -s -- --tool cursor --version 19 --target .
 ```
 
-`install.sh` clones (or updates) the repo into `~/.odoo-senior-universal`, copies the right files into `--target`, prints what it did, and exits non-zero with a clear message on a bad flag. It never deletes anything.
+`install.sh` clones (or updates) the repo into `~/.odoo-senior-universal`, copies the right files into `--target`, prints what it did, and exits non-zero with a clear message on a bad flag. It never deletes anything. On Windows, run this one-liner in Git Bash or WSL.
 
 Flags: `--tool <cursor|copilot|agents|claude|all>` · `--version <17|18|19|20>` (default 19, used by `claude`) · `--upgrades` (also copy the upgrade guides into `.claude/skills/`) · `--target <dir>` (default: current directory). Run with `--help` for details.
 
@@ -35,6 +44,8 @@ Clone once:
 ```bash
 git clone https://github.com/Znad-Odoo-DEV/odoo-senior-universal.git && cd odoo-senior-universal
 ```
+
+The `mkdir` / `cp` commands below run unchanged on Ubuntu, macOS, Git Bash and WSL. PowerShell-only users: open Git Bash instead, or translate `cp -r A B` to `Copy-Item -Recurse A B` and `mkdir -p D` to `New-Item -ItemType Directory -Force D`.
 
 ### Cursor
 ```bash
@@ -80,6 +91,16 @@ pbcopy < SYSTEM_PROMPT.md
 Ubuntu (`sudo apt install -y xclip` once):
 ```bash
 xclip -selection clipboard < SYSTEM_PROMPT.md
+```
+
+Windows — Git Bash:
+```bash
+clip < SYSTEM_PROMPT.md
+```
+
+Windows — PowerShell:
+```powershell
+Get-Content SYSTEM_PROMPT.md | Set-Clipboard
 ```
 
 ## Update
